@@ -29,7 +29,7 @@ title: A platform for building amazing devices.
     </div>
 </div>
 
-<h2 style="margin-bottom: 20px">Connecting and controlling your devices should be this easy:</h2>
+<h2 style="margin-bottom: 20px">Connecting and controlling devices is this easy with Nitrogen:</h2>
 
 ```javascript
 var light = new Light({ nickname: 'livingRoomLight' });
@@ -41,4 +41,5 @@ service.connect(light, function(err, session) {
     });
 });
 ```
-<a href="/guides" class="btn green"  style="margin-top: 10px">Learn More</a>
+
+<a href="/docs" class="btn green"  style="margin-top: 10px">Learn More</a>

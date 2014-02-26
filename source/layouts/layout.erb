@@ -14,7 +14,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <!-- BEGIN HEAD -->
 <head>
 <meta charset="utf-8"/>
-<title><%= yield_content :title %></title>
+<title><%= current_page.data.title || "Nitrogen" %></title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="" name="description"/>
@@ -22,8 +22,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <meta name="MobileOptimized" content="320">
 
 <%= stylesheet_link_tag "all" %>
-
-<link rel="shortcut icon" href="favicon.ico"/>
 
 </head>
 
@@ -48,14 +46,54 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       <li id="aboutNavbar">
         <a href="/">About</a>
       </li>
+      <!--
       <li id="guidesNavbar">
         <a href="/guides">Guides</a>
       </li>
-      <li>
+    -->
+      <li id="docsNavbar">
         <a href="/docs">Documentation</a>
       </li>
       <li>
-        <a href="http://github.com/nitrogenjs">GitHub</a>
+        <a data-toggle="dropdown" data-hover="dropdown" data-close-others="true" class="dropdown-toggle" href="javascript:;">
+          <span class="selected">
+          </span>
+           Code <i class="fa fa-angle-down"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="http://github.com/nitrogenjs/service">
+              Service
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/nitrogenjs/client">
+              Client Library
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/nitrogenjs/admin">
+              Admin
+            </a>
+          </li>
+          <li>
+            <a href="http://github.com/nitrogenjs/cli">
+              Command Line Interface
+            </a>
+          </li>
+
+          <li>
+            <a href="http://github.com/nitrogenjs/commands">
+              Commands
+            </a>
+          </li>
+
+          <li>
+            <a href="http://github.com/nitrogenjs/devices">
+              Devices
+            </a>
+          </li>
+        </ul>
       </li>
     </ul>
   </div>
@@ -127,7 +165,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
   $(document).ready(function() {    
      App.init();
 
-     console.log(window.location.pathname.substring(0,7));
+     console.log(window.location.pathname.substring(0,5));
 
      if (window.location.pathname.substring(0, 7) === '/guides') {
         $('#guidesNavbar').addClass('active');
@@ -135,6 +173,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         $('#docsNavbar').addClass('active');      
      } else {
         $('#aboutNavbar').addClass('active');
+        $('.page-content').css('margin-left', '0');
      }
   });
 </script>
