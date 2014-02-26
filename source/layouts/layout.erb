@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.0.3
+Version: 1.5.5
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+<meta charset="utf-8"/>
+<title><%= yield_content :title %></title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<meta name="MobileOptimized" content="320">
+
+<%= stylesheet_link_tag "all" %>
+
+<link rel="shortcut icon" href="favicon.ico"/>
+
+</head>
+
+<body class="page-header-fixed page-boxed">
+<!-- BEGIN HEADER -->
+<div class="header navbar navbar-inverse navbar-fixed-top">
+  <!-- BEGIN TOP NAVIGATION BAR -->
+  <div class="header-inner container">
+    <!-- BEGIN LOGO -->
+    <a class="navbar-brand" href="index.html" style="color:#236AB4">
+       nitrogen
+    </a>
+    <!-- END LOGO -->
+    <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+    <a href="javascript:;" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+    <img src="images/menu-toggler.png" alt=""/>
+    </a>
+    <!-- END RESPONSIVE MENU TOGGLER -->
+    <!-- BEGIN TOP NAVIGATION MENU -->
+    <div class="hor-menu">
+    <ul class="nav navbar-nav">
+      <li id="aboutNavbar">
+        <a href="/">About</a>
+      </li>
+      <li id="guidesNavbar">
+        <a href="/guides">Guides</a>
+      </li>
+      <li>
+        <a href="/docs">Documentation</a>
+      </li>
+      <li>
+        <a href="http://github.com/nitrogenjs">GitHub</a>
+      </li>
+    </ul>
+  </div>
+    <div class="hor-menu pull-right">
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="#">Admin Tool</a>
+      </li>
+    </ul>
+  </div>
+    <!-- END TOP NAVIGATION MENU -->
+  </div>
+  <!-- END TOP NAVIGATION BAR -->
+</div>
+<!-- END HEADER -->
+<div class="clearfix">
+</div>
+<div class="container">
+  <!-- BEGIN CONTAINER -->
+  <div class="page-container">
+
+    <%= yield_content :sidebar %>
+
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper">
+      <div class="page-content">
+
+        <!-- BEGIN PAGE HEADER
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="page-title">
+              
+            </h3>
+          </div>
+        </div>
+        <!-- END PAGE HEADER-->
+
+        <!-- BEGIN PAGE CONTENT-->
+        <div class="row">
+          <div class="col-md-12">
+             <%= yield %>
+          </div>
+        </div>
+        <!-- END PAGE CONTENT-->
+
+      </div>
+    </div>
+    <!-- END CONTENT -->
+  </div>
+  <!-- END CONTAINER -->
+
+  <!-- BEGIN FOOTER -->
+  <div class="footer">
+    <div class="footer-inner">
+       Copyright <%= Time.now.strftime("%Y") %> Nitrogen
+    </div>
+    <div class="footer-tools">
+      <span class="go-top">
+        <i class="fa fa-angle-up"></i>
+      </span>
+    </div>
+  </div>
+</div>
+<!-- END FOOTER -->
+
+<%= javascript_include_tag  "all" %>
+
+<script>
+  $(document).ready(function() {    
+     App.init();
+
+     console.log(window.location.pathname.substring(0,7));
+
+     if (window.location.pathname.substring(0, 7) === '/guides') {
+        $('#guidesNavbar').addClass('active');
+     } else if (window.location.pathname.substring(0,5) === '/docs') {
+        $('#docsNavbar').addClass('active');      
+     } else {
+        $('#aboutNavbar').addClass('active');
+     }
+  });
+</script>
+
+</body>
+<!-- END BODY -->
+</html>
