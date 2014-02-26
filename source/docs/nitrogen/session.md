@@ -18,17 +18,11 @@ Clear all of the credentials for a particular principal.
 
 **principal**:  *Object*,  The principal to clear credentials for.
 
-Session.connectSocket(principal, accessToken)
----------------------------------------------
+Session.connectSocket()
+-----------------------
 Connect subscription socket for principal with this accessToken to the service.
 
 
-
-**Parameters**
-
-**principal**:  *Object*,  The principal to open a subscription socket for.
-
-**accessToken**:  *Object*,  The accessToken to open a subscription socket for.
 
 Session.disconnectSubscription()
 --------------------------------
@@ -66,8 +60,8 @@ Impersonate the principal with the authorization context of this session.  Used 
 
 **callback.principal**:  *Object*,  The impersonated principal.
 
-Session.onAuthFailure(principal, callback, callback.err, callback.session, callback.principal)
-----------------------------------------------------------------------------------------------
+Session.onAuthFailure(principal, callback)
+------------------------------------------
 Provide a callback function on authentication failure.
 
 
@@ -76,57 +70,29 @@ Provide a callback function on authentication failure.
 
 **principal**:  *Object*,  The principal to impersonate with this session.
 
-**callback**:  *Object*,  Callback for the authentication failure.
+**callback**:  *Function*,  Callback function with signature f(err).
 
-**callback.err**:  *Object*,  If the impersonation failed, this will contain the error.
-
-**callback.session**:  *Object*,  The session for the impersonated principal with this service.
-
-**callback.principal**:  *Object*,  The impersonated principal.
-
-Session.on(options, options.type, options.filter, callback, callback.object)
-----------------------------------------------------------------------------
+Session.on(options, callback)
+-----------------------------
 Core subscription event method. Primarily used to subscribe for changes to principals and new messages.
 
 
 
 **Parameters**
 
-**options**:  *Object*,  Options for what this subscription would like to receive.
+**options**:  *Object*,  Options for the filter of the messages this subscription should receive: 'type': The type this subscription should receive.  Only 'message' is currently supported. 'filter': The filter to apply to the objects returned from this subscription.  For example { from: '51f2735fda5fcca439000001' } will restrict messages received to only those from this particular principal id.
 
-**options.type**:  *String*,  The type this subscription should receive.  One of 'message' or 'principal'.
+**callback**:  *Function*,  Callback function with signature f(objectReceived).
 
-**options.filter**:  *Object*,  The filter to apply to the objects returned from this subscription.  For example { from: '51f2735fda5fcca439000001' } will restrict messages received to only those from this particular principal id.
-
-**callback**:  *Object*,  Callback for event.
-
-**callback.object**:  *Object*,  The received event.  Is either a principal or message object depending on the type of the subscription requested.
-
-Session.onMessage(options.filter, callback, callback.message)
--------------------------------------------------------------
+Session.onMessage(filter, callback)
+-----------------------------------
 Syntax sugar to setup a message subscription.
 
 
 
 **Parameters**
 
-**options.filter**:  *Object*,  The filter to apply to the objects returned from this subscription.  For example { from: '51f2735fda5fcca439000001' } will restrict messages received to only those from this particular principal id.
+**filter**:  *Object*,  The filter to apply to the objects returned from this subscription.  For example { from: '51f2735fda5fcca439000001' } will restrict messages received to only those from this particular principal id.
 
-**callback**:  *Object*,  Callback for event.
-
-**callback.message**:  *Object*,  The message received as part of the subscription.
-
-Session.onPrincipal(options.filter, callback, callback.principal)
------------------------------------------------------------------
-Syntax sugar to setup a principal subscription.
-
-
-
-**Parameters**
-
-**options.filter**:  *Object*,  The filter to apply to the objects returned from this subscription.  For example { id: '51f2735fda5fcca439000001' } will restrict messages received to only those for this particular principal id.
-
-**callback**:  *Object*,  Callback for event.
-
-**callback.principal**:  *Object*,  The principal received as part of this subscription.
+**callback**:  *Function*,  Callback function with signature f(messageReceived).
 

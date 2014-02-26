@@ -4,15 +4,15 @@ class Principal
 
 Principal.authenticate(config, callback)
 ----------------------------------------
-Authenticate this principal with the service.  The mechanism used to authenticate depends on the type of principal.
-For users, an email and password is used.  For all other principals, the secret returned from 'create' during
-will be used.
+Authenticate this principal with the service.  The mechanism used to authenticate depends on
+the type of principal. For users, an email and password is used.  For all other principals,
+the secret returned from 'create' will be used.
 
 
 
 **Parameters**
 
-**config**:  *Object*,  The config data for the Nitrogen service.
+**config**:  *Object*,  The config for the Nitrogen service to auth against.
 
 **callback**:  *Function*,  Callback function of the form f(err, principal, accessToken).
 
@@ -39,11 +39,11 @@ Find principals filtered by the passed query and limited to and sorted by the pa
 
 **session**:  *Object*,  An open session with a Nitrogen service.
 
-**query**:  *Object*,  A query filter for the principals defined using MongoDB query format.
+**query**:  *Object*,  A query filter for the principals defined using MongoDB's query format.
 
-**options**:  *Object*,  Options for the query:  'limit': maximum number of principals to be returned. 'sort': The field that the results should be sorted on, 'dir': The direction that the results  should be sorted. 'skip': The number of results that should be skipped before pulling results.
+**options**:  *Object*,  Options for the query:  'limit': maximum number of results to be returned. 'sort': The field that the results should be sorted on, 'dir': The direction that the results  should be sorted. 'skip': The number of results that should be skipped before pulling results.
 
-**callback**:  *Function*,  Callback function of the form f(err, principal, accessToken).
+**callback**:  *Function*,  Callback function of the form f(err, principals).
 
 Principal.findById(session, principalId, callback)
 --------------------------------------------------
@@ -61,8 +61,8 @@ Find a principal by id.
 
 Principal.impersonate(session, principalId, callback)
 -----------------------------------------------------
-Impersonate a principal using another principal's session.  This is used primarily by the service to impersonate
-a particular principal for agent execution.
+Impersonate a principal using another principal's session.  This is used by the service to
+impersonate a particular principal for application execution.
 
 
 
@@ -84,7 +84,7 @@ Delete this principal from the service.
 
 **session**:  *Object*,  An open session with a Nitrogen service.
 
-**callback**:  *Function*,  Callback function of the form f(err, principal, accessToken).
+**callback**:  *Function*,  Callback function of the form f(err).
 
 Principal.resume(session, callback)
 -----------------------------------
@@ -108,7 +108,7 @@ Save this principal to the service.
 
 **session**:  *Object*,  An open session with a Nitrogen service.
 
-**callback**:  *Function*,  Callback function of the form f(err, principal, accessToken).
+**callback**:  *Function*,  Callback function of the form f(err, principal).
 
 Principal.status(callback)
 --------------------------
@@ -122,7 +122,7 @@ By default this implementation simply makes a no status callback.
 
 **Parameters**
 
-**callback**:  *Function*,  Callback function of the form f(err, principal, accessToken).
+**callback**:  *Function*,  Callback function of the form f(err, status).
 
 Principal.changePassword(session, currentPassword, newPassword, callback)
 -------------------------------------------------------------------------

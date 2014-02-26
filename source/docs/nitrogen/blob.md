@@ -2,9 +2,9 @@ class Blob
 ----------
 **Methods**
 
-Blob.fromFile(path, callback, callback.err, callback.blob)
-----------------------------------------------------------
-This method loads the metadata for a blob from a file: its timestamp, content type, and content length.
+Blob.fromFile(path, callback)
+-----------------------------
+Loads the metadata for a blob from a file: its timestamp, content type, and content length.
 
 
 
@@ -12,15 +12,11 @@ This method loads the metadata for a blob from a file: its timestamp, content ty
 
 **path**:  *String*,  The path to load this blob from.
 
-**callback**:  *Object*,  Callback with the blob.
+**callback**:  *Function*,  Callback function of the form f(err, blob).
 
-**callback.err**:  *Object*,  If the load of the blob fails, this contains the error.
-
-**callback.blob**:  *Object*,  The blob metadata from the passed file.
-
-Blob.fromFile(session, stream, callback, callback.err, callback.blob)
----------------------------------------------------------------------
-Saves the blob stream with the Nitrogen service.
+Blob.save(session, stream, callback)
+------------------------------------
+Saves the blob to the Nitrogen service.
 
 
 
@@ -30,15 +26,10 @@ Saves the blob stream with the Nitrogen service.
 
 **stream**:  *Object*,  A stream with the contents of the blob.
 
-**callback**:  *Object*,  
+**callback**:  *Function*,  Callback function of the form f(err, blob).
 
-
-**callback.err**:  *Object*,  If the load of the blob fails, this contains the error.
-
-**callback.blob**:  *Object*,  The updated blob metadata.
-
-Blob.fromFile(session, url, callback, callback.err, callback.resp, callback.blobData)
--------------------------------------------------------------------------------------
+Blob.get(session, url, callback)
+--------------------------------
 Fetches a blob from the Nitrogen service.
 
 
@@ -49,12 +40,5 @@ Fetches a blob from the Nitrogen service.
 
 **url**:  *Object*,  The url for the blob.
 
-**callback**:  *Object*,  
-
-
-**callback.err**:  *Object*,  If the load of the blob fails, this contains the error.
-
-**callback.resp**:  *Object*,  The response object from the request.
-
-**callback.blobData**:  *Object*,  The blob's data.
+**callback**:  *Function*,  Callback function of the form f(err, httpResponse, blobData).
 
