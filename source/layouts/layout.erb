@@ -59,7 +59,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         <a data-toggle="dropdown" data-hover="dropdown" data-close-others="true" class="dropdown-toggle" href="javascript:;">
           <span class="selected">
           </span>
-           Code <i class="fa fa-angle-down"></i>
+           Source Repos <i class="fa fa-angle-down"></i>
         </a>
         <ul class="dropdown-menu">
           <li>
@@ -69,12 +69,12 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
           </li>
           <li>
             <a href="http://github.com/nitrogenjs/client">
-              Client Library
+              Client Module
             </a>
           </li>
           <li>
             <a href="http://github.com/nitrogenjs/admin">
-              Admin
+              Service Admin Tool
             </a>
           </li>
           <li>
@@ -101,7 +101,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     <div class="hor-menu pull-right">
     <ul class="nav navbar-nav">
       <li>
-        <a href="#">Admin Tool</a>
+        <a href="#">Hosted Service Admin</a>
       </li>
     </ul>
   </div>
@@ -166,8 +166,6 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
   $(document).ready(function() {    
      App.init();
 
-     console.log(window.location.pathname.substring(0, 15));
-
      if (window.location.pathname.substring(0, 5) === '/docs') {
         $('#docsNavbar').addClass('active');
         if (window.location.pathname.substring(0, 14) === '/docs/concepts') {
@@ -181,6 +179,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         $('#aboutNavbar').addClass('active');
         $('.page-content').css('margin-left', '0');
      }
+
+     $('#searchForm').submit(function( event ) {
+        var query = $('#query').val();
+        window.location = 'https://www.google.com/#q=site:nitrogen.io+' + encodeURIComponent(query);
+
+        event.preventDefault();
+     });
   });
 </script>
 
