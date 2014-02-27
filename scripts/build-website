@@ -1,0 +1,7 @@
+bundle exec middleman build
+cd ../website-deploy
+find * -exec git rm -r {} \;
+cd ../website
+cp -r build/* ../website-deploy
+cd ../website-deploy
+git add -A *
