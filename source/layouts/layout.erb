@@ -166,13 +166,18 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
   $(document).ready(function() {    
      App.init();
 
-     console.log(window.location.pathname.substring(0,5));
+     console.log(window.location.pathname.substring(0, 15));
 
-     if (window.location.pathname.substring(0, 7) === '/guides') {
-        $('#guidesNavbar').addClass('active');
-     } else if (window.location.pathname.substring(0,5) === '/docs') {
-        $('#docsNavbar').addClass('active');      
-     } else {
+     if (window.location.pathname.substring(0, 5) === '/docs') {
+        $('#docsNavbar').addClass('active');
+        if (window.location.pathname.substring(0, 14) === '/docs/concepts') {
+            $('#conceptsSelected').addClass('selected');
+            $('#conceptsArrow').addClass('arrow').addClass('open');
+        } else if (window.location.pathname.substring(0, 14) === '/docs/nitrogen') {
+            $('#nitrogenSelected').addClass('selected');
+            $('#nitrogenArrow').addClass('arrow').addClass('open');
+        }
+     } else { 
         $('#aboutNavbar').addClass('active');
         $('.page-content').css('margin-left', '0');
      }
