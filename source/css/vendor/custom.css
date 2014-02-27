@@ -8,3 +8,5 @@
 body {
     font-size: 14px;
 }
+
+.vanish-sidebar { margin-left: 0px !important; }

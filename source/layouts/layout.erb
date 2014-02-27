@@ -120,7 +120,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
     <!-- BEGIN CONTENT -->
     <div class="page-content-wrapper">
-      <div class="page-content">
+      <div id="page-content-div" class="page-content">
 
         <!-- BEGIN PAGE HEADER
         <div class="row">
@@ -177,7 +177,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
      } else { 
         $('#aboutNavbar').addClass('active');
-        $('.page-content').css('margin-left', '0');
+        $('#page-content-div').addClass('vanish-sidebar');
      }
 
      $('#searchForm').submit(function( event ) {
