@@ -4,13 +4,13 @@ title: Nitrogen Permissions
 
 # Permissions
 
-A permission in Nitrogen is a grant that has been made to principal(s) for a particular set of actions on another principal.
+A permission in Nitrogen describes actions that a set of Principals can or cannot take on another set of Principals.
  
 ## Properties 
 
 * issued\_to: The principal id that this permission is granted to.  If missing, this permission applies to all principals.
 
-* principal\_for: The principal this permission is for.  For instance, if you were granting subscription access for a lamp to a user, in this scenario the lamp would be the principal_for.
+* principal\_for: The principal this permission is for.  For instance, if you were granting subscription access for a lamp to a user, in this scenario the lamp would be the principal_for.  If missing, this permission applies to all principals.
 
 * action: The action that this permission is relevant for.  Valid values include:
 
@@ -19,7 +19,7 @@ A permission in Nitrogen is a grant that has been made to principal(s) for a par
     * 'subscribe': issued\_to is authorized to subscribe to messages from principal_for.
     * 'view': issued\_to is authorized to see principal_for in searches.
 
-* authorized: Boolean declaring if matches to this permission authorizes or forbids it.
+* authorized: Boolean declaring if matches to this permission authorizes or forbids the action.
 
 * priority: The priority this principal has in relation to other permissions.  Permissions are walked in priority order and the first match is used to determine if the action is authorized.  Lower numbers are higher priority.
 
@@ -29,4 +29,4 @@ A permission in Nitrogen is a grant that has been made to principal(s) for a par
 
 ## Access Control List (ACL)
 
-Permissions within Nitrogen are evaluated in a first-match manner via priority. When a principal requests an action, its list of permissions are pulled and walked from highest to lowest priority. The first matching permission is used to determine if the action is allowed.  You can view the permissions for any principal in the admin tool in principal view.
+Permissions within Nitrogen are evaluated in a first-match manner via priority. When a principal requests an action, its list of permissions are pulled and walked from highest to lowest priority. The first matching permission is used to determine if the action is allowed.

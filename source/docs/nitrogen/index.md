@@ -8,6 +8,6 @@ If you are building a node.js application you should install nitrogen via npm:
 
 `npm install nitrogen`
 
-For browser based applications, the client is also available off any Nitrogen service at /client/nitrogen-min.js
+For browser based applications, the client is also available off any Nitrogen service at `/client/nitrogen-min.js.`  This is the best way to pull in the client library when working with a service because it will automatically track the API of that service.
 
-For the free hosted service, its located here: `https://api.nitrogen.io/client/nitrogen-min.js`
+For example, for the free hosted Nitrogen service, the client library is located here: `https://api.nitrogen.io/client/nitrogen-min.js`
