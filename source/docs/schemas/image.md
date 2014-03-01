@@ -1,4 +1,4 @@
-# Image Schema
+# image
 
 The image schema contains the following fields in its body:
 

@@ -179,11 +179,25 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
      if (window.location.pathname.substring(0, 5) === '/docs') {
         $('#docsNavbar').addClass('active');
         if (window.location.pathname.substring(0, 14) === '/docs/concepts') {
+            $('#conceptsTree').addClass('active');
             $('#conceptsSelected').addClass('selected');
             $('#conceptsArrow').addClass('arrow').addClass('open');
         } else if (window.location.pathname.substring(0, 14) === '/docs/nitrogen') {
-            $('#nitrogenSelected').addClass('selected');
-            $('#nitrogenArrow').addClass('arrow').addClass('open');
+            $('#clientLibraryTree').addClass('active');
+            $('#clientLibrarySelected').addClass('selected');
+            $('#clientLibraryArrow').addClass('arrow').addClass('open');
+        } else if (window.location.pathname.substring(0, 13) === '/docs/schemas') {
+            $('#schemasTree').addClass('active');
+            $('#schemasSelected').addClass('selected');
+            $('#schemasArrow').addClass('arrow').addClass('open');
+        } else if (window.location.pathname.substring(0, 13) === '/docs/devices') {
+            $('#devicesTree').addClass('active');
+            $('#devicesSelected').addClass('selected');
+            $('#devicesArrow').addClass('arrow').addClass('open');
+        } else if (window.location.pathname.substring(0, 14) === '/docs/managers') {
+            $('#managersTree').addClass('active');
+            $('#managersSelected').addClass('selected');
+            $('#managersArrow').addClass('arrow').addClass('open');
         }
      } else { 
         $('#aboutNavbar').addClass('active');
