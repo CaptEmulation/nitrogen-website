@@ -4,9 +4,9 @@ cameraCommand messages relay camera control commands to devices with that capabi
 
 ## Implementation
 
-Services can add schema support for cameraCommand to a service, device, or application by including the module `nitrogen-camera` in the project via npm:
+The cameraCommand schema is included in the module `nitrogen-camera`. You can add camera functionality to any service, device, or application by installing this module via npm:
 
-	npm install nitrogen-camera
+`npm install nitrogen-camera`
 
 ## Properties
 

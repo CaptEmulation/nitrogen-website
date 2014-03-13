@@ -1,10 +1,10 @@
-# Heartbeat schema
+# heartbeat
 
 A heartbeat message relays status about a principal to the service. The principal is in control of sending heartbeat messages for itself to the service. The JavaScript client module automatically does this for clients on a time interval.
 
 ## Implementation
 
-The claim message schema is built into the Nitrogen service.
+This message schema is built into the Nitrogen service.
 
 ## Properties
 
