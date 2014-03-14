@@ -17,7 +17,7 @@ title: A platform for building connected devices and applications.
     <div class="col-md-4">
         <h3>Open Source</h3>
         <p style="font-size: 120%">
-            End to end open source. No proprietary client languages, no lock-in to cloud services, no required hardware. Nitrogen aims at getting things on the internet, not building a seperate internet for things.
+            End to end open source. No proprietary client languages, no lock-in to cloud services, no required hardware. Nitrogen is about getting things to communicate on the internet -- not building a seperate internet for things.
         </p>
     </div>
 
