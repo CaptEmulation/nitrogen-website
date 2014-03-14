@@ -47,13 +47,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
       <li id="aboutNavbar">
         <a href="/">About</a>
       </li>
-      <!--
       <li id="guidesNavbar">
-        <a href="/guides">Guides</a>
+        <a href="/guides/start/setup.html">Getting Started</a>
       </li>
-    -->
       <li id="docsNavbar">
-        <a href="docs/nitrogen/index.html">Documentation</a>
+        <a href="/docs/nitrogen/index.html">Documentation</a>
       </li>
       <li>
         <a data-toggle="dropdown" data-hover="dropdown" data-close-others="true" class="dropdown-toggle" href="javascript:;">
@@ -111,7 +109,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     <div class="hor-menu pull-right">
     <ul class="nav navbar-nav">
       <li>
-        <a href="#">Hosted Service</a>
+        <a href="https://admin.nitrogen.io/">Hosted Admin</a>
       </li>
     </ul>
   </div>
@@ -174,9 +172,11 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 
 <script>
   $(document).ready(function() {    
-     App.init();
+    App.init();
 
-     if (window.location.pathname.substring(0, 5) === '/docs') {
+    console.log(window.location.pathname.substring(0, 13));
+
+    if (window.location.pathname.substring(0, 5) === '/docs') {
         $('#docsNavbar').addClass('active');
         if (window.location.pathname.substring(0, 14) === '/docs/concepts') {
             $('#conceptsTree').addClass('active');
@@ -198,13 +198,21 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
             $('#managersTree').addClass('active');
             $('#managersSelected').addClass('selected');
             $('#managersArrow').addClass('arrow').addClass('open');
+        } 
+    } else if (window.location.pathname.substring(0, 7) === '/guides') {
+        $('#guidesNavbar').addClass('active');
+        if (window.location.pathname.substring(0, 13) === '/guides/start') {
+            console.log('in here');
+            $('#startTree').addClass('active');
+            $('#startSelected').addClass('selected');
+            $('#startArrow').addClass('arrow').addClass('open');
         }
-     } else { 
+    } else { 
         $('#aboutNavbar').addClass('active');
         $('#page-content-div').addClass('vanish-sidebar');
-     }
+    }
 
-     $('#searchForm').submit(function( event ) {
+    $('#searchForm').submit(function( event ) {
         var query = $('#query').val();
         window.location = 'https://www.google.com/#q=site:nitrogen.io+' + encodeURIComponent(query);
 

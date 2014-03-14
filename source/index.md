@@ -1,10 +1,10 @@
 ---
-title: A platform for building amazing devices.
+title: A platform for building connected devices and applications.
 ---
 
 <center>
     <img class="logo" src="images/logo.png" width="166" height="167" /> 
-    <h1 class="text-center">A platform for building amazing devices</h1>
+    <h1 class="text-center">A platform for connecting real world devices.</h1>
 </center>
 
 <div class="row" style="margin-top: 20px">
@@ -42,4 +42,4 @@ service.connect(light, function(err, session) {
 });
 ```
 
-<a href="/docs" class="btn green"  style="margin-top: 10px">Learn More</a>
+<a href="/guides/start/setup.html" class="btn green"  style="margin-top: 10px">Learn More</a>
