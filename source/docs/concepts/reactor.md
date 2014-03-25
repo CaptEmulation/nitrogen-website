@@ -1,16 +1,17 @@
 ---
-title: Nitrogen Reactors
+title: Nitrogen Reactor
 ---
 
 # Reactor
 
-A Reactor is a 
+A Reactor is the application execution environment for Nitrogen. It is a supervisory process that manages the complete lifecycle of an application: installing, establishing a security context, starting, stopping, upgrades, and uninstalling. Each application in a reactor executes in its own node.js process, and within that process, within an isolated virtual machine that only has access to a session, its package dependencies, and the Nitrogen client module.
 
-## Properties
+Reactors themselves watch their stream of reactorCommand messages, perform the appopriate tasks, and emit reactorStatus messages with the new state of all of their instances.
 
-* type: The type of principal.  Nitrogen currently defines 4 types of principals:
-    * device: A device is a principal that represents a physical piece of hardware.  A device authenticates using a secret that is known to only it and the service.
-    * user: A user is a human user of the system.  Users authenticate via email and password combinations (currently).
-    * service: A service is a Nitrogen service that acts as a messaging hub for a set of principals that are interacting with it.
-    * app: An application that runs in a reactor. This principal has a set of permissions that are derived from the principal that installed the application.  For example, an app might only have permission to send messages to one device and follow messages from another device even though the user that installed it can send and follow messages from many more devices.
-* name: A human readable name applied to this Principal.
+Reactors expect applications to expose a very simple module interface:
+
+* start(session, params): Function called when the reactor starts an application. It is passed the session the instance was told to execute under and a free form params object that the application can use to customize its execution that is provided by the reactorCommand that initiated this start.
+
+* stop(): Function called when the reactor stops an application. Used to perform any required cleanup.
+
+These two functions are the only requirements for a Nitrogen application. In all other ways applications are just node.js modules.
