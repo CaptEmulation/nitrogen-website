@@ -4,7 +4,7 @@ title: A platform for building connected devices and applications.
 
 <center>
     <img class="logo" src="images/logo.png" width="166" height="167" /> 
-    <h1 class="text-center">A platform for connecting real world devices.</h1>
+    <h1 class="text-center">A platform for building real world devices.</h1>
 </center>
 
 <div class="row" style="margin-top: 20px">
