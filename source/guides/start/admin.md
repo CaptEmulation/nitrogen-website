@@ -8,10 +8,9 @@ You can manage your devices, applications, and users with Nitrogen using either 
 
 You can reach the web admin by clicking the link in the upper right corner of this page or by navigating to [https://admin.nitrogen.io](https://admin.nitrogen.io).
 
-
 ### Claiming your Camera Device
 
-Login to the web admin using your email and password that you used to create your account.  This will take you to the principals page that lists all of the principals that you have permission to interact with.  This should include your user principal, and perhaps your camera device, if the service was able to automatically determine both you and the camera device were the only principals that were connecting from the same IP address.
+Login to the web admin using your email and password that you used to create your account.  This will take you to the principals page that lists all of the principals in your cloud. This should include your user principal, and perhaps your camera device, if the service was able to automatically that you were the only principal that was connecting from that IP address.
 
 <img src="/images/admin-new-user.png" style="max-width:100%" />
 
