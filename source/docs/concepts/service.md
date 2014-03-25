@@ -4,7 +4,7 @@ title: Nitrogen Service
 
 # Service
 
-A service is the principal and messaging hub in the Nitrogen system.  It authenticates and authorizes principals, manages messaging between principals, and provides real time message subscriptions for messages.  A typical device application using the JavaScript library looks like this:
+A service is a principal and messaging hub in Nitrogen. It authenticates and authorizes principals, manages messaging between principals, and provides real time message subscriptions for messages. A typical device application using the JavaScript library looks like this:
 
 ```javascript
 
@@ -23,7 +23,7 @@ service.connect(light, function(err, session, light) {
 });
 ```
 
-In the client library, the service class manages authentication and session management for you.  You provide it a callback function that describes the work you'd like it perform after a session is established.  Its possible that your session will fail.  The service class handles reconnection / reauthorization transparently for you and will call you back again when a connection is re-established.
+When you use the Nitrogen client library, the service class manages authentication and session management for you. You provide it a callback function that describes the work you'd like it perform after a session is established.  Its possible that your session will fail.  The service class handles reconnection / reauthorization transparently for you and will call you back again when a connection is re-established.
 
 ## Sessions
 
@@ -35,4 +35,4 @@ nitrogen.Message.find(session, { to: camera.id }, function(err, messages) {
 });
 ```
 
-The service can automatically renew a session as it nears the end of the AccessToken's lifetime.  This detail is again automatically handled for you by the Service and Session class.
+The service can automatically renew a session as it nears the end of the AccessToken's lifetime. This detail is again automatically handled for you by the Service and Session class.
