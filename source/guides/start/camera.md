@@ -4,7 +4,7 @@ title: Camera Device with Nitrogen
 
 ## Camera Device
 
-With an account created and the Nitrogen command line tool [set up](setup.md), let's build our first device.
+With an account created and the Nitrogen command line tool [set up](setup.md), let's connect our first device.
 
 To avoid the complexities around actual hardware for the moment, we're going to build a device around something that we all have: a camera on our laptop.  Let's make that camera internet controllable.
 
@@ -77,4 +77,4 @@ The camera device should startup, connect to the service, and display something 
 This principal (5321e2debe46b41671000662) can be claimed using code: IQGY-0080
 ```
 
-In Nitrogen, you need to claim your devices with the service using proof that you are the rightful owner of the device.  This claim code is the mechanism that you use to do that.  Copy this code to your clipboard, leave the device app running, and let's move on to using the [Nitrogen web admin to control it](admin.html).
+In Nitrogen, you need to claim your devices with the service using proof that you are the rightful owner of the device.  This claim code is the mechanism that you use to do that.  Copy this code to your clipboard, leave the device app running, and lets use the [Nitrogen web admin to claim and control it](admin.html).

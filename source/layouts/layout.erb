@@ -48,7 +48,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         <a href="/">About</a>
       </li>
       <li id="guidesNavbar">
-      <a href="/guides/start/setup.html">Getting Started</a>
+      <a href="/guides/start/setup.html">Guides</a>
       </li>
       <li id="docsNavbar">
         <a href="/docs/nitrogen/index.html">Documentation</a>
@@ -202,10 +202,13 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
     } else if (window.location.pathname.substring(0, 7) === '/guides') {
         $('#guidesNavbar').addClass('active');
         if (window.location.pathname.substring(0, 13) === '/guides/start') {
-            console.log('in here');
             $('#startTree').addClass('active');
             $('#startSelected').addClass('selected');
             $('#startArrow').addClass('arrow').addClass('open');
+        } else if (window.location.pathname.substring(0, 14) === '/guides/device') {
+            $('#deviceTree').addClass('active');
+            $('#deviceSelected').addClass('selected');
+            $('#deviceArrow').addClass('arrow').addClass('open');
         }
     } else { 
         $('#aboutNavbar').addClass('active');

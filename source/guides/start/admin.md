@@ -10,7 +10,7 @@ You can reach the web admin by clicking the link in the upper right corner of th
 
 ### Claiming your Camera Device
 
-Login to the web admin using your email and password that you used to create your account.  This will take you to the principals page that lists all of the principals in your cloud. This should include your user principal, and perhaps your camera device, if the service was able to automatically that you were the only principal that was connecting from that IP address.
+Login to the web admin using your email and password that you used to create your account.  This will take you to the principals page that will list all of the principals in your cloud. This should include your user principal, and perhaps your camera device, if the service was able to automatically that you were the only principal that was connecting from that IP address.
 
 <img src="/images/admin-new-user.png" style="max-width:100%" />
 
