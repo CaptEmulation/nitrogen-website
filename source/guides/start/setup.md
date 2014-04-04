@@ -4,7 +4,7 @@ title: First Steps with Nitrogen
 
 ## First Steps
 
-This guide will walk you through everything you need to do to get you setup and running your first device. We'll start with a device that almost everyone has: Let's turn your laptop's camera into an internet controllable camera (for simplicity sake).
+This guide will walk you through everything you need to do to get you setup and running your first device. Let's start with a device that almost everyone has: Let's turn your laptop's camera into an internet controllable camera.
 
 ### Installation
 
@@ -24,12 +24,12 @@ This should display of the top level commands available to you with the command 
 
 With the command line tool installed, let's create a user account with the hosted Nitrogen service:
 
-`> n2 user create <your-email>`
+`> n2 user create --email <your-email> --name 'Your Name'`
 
-This will ask you for a password and your real time, create an account for you, and store away your credentials for use with the command line tool. Let's run one more command just to make sure it is all up and working correctly:
+This will ask you for a password, create an account for you, and store away your credentials for use with the command line tool. Let's run one more command just to make sure it is all up and working correctly:
 
 `> n2 principal ls`
 
 A [principal in Nitrogen](/docs/concepts/principals.html) is an entity that authenticates with the service. It could be a device, user, or even the service itself.
 
-You should see just one principal at this point, the user you just created, since you haven't added any devices to the service.  Let's rectify that situation by [creating our first device](camera.html)
+You should see just one principal at this point, the user you just created, since you haven't added any devices to the service. Let's [create our first device](camera.html).

@@ -8,19 +8,19 @@ With an account created and the Nitrogen command line tool [set up](setup.md), l
 
 To avoid the complexities around actual hardware for the moment, we're going to build a device around something that we all have: a camera on our laptop.  Let's make that camera internet controllable.
 
-Instead of writing the device application from scratch, let's clone a repo from the Nitrogen project and walk through the code and make some edits.  Change to a development directory on your machine and run:
+The first step is to clone a repo from the Nitrogen project and walk through the code and make some edits.  Change to a development directory on your machine and run:
 
 `> git clone https://github.com/nitrogenjs/camera camera`
 
 ### Walkthrough
 
-This camera project is a canonical example for what a standalone device application looks like. Let's walk through the camera.js file and understand what's going on.
+The camera project you just cloned is a canonical example for what a standalone device application looks like. Let's walk through the camera.js file and understand what's going on.
 
 ```javascript
 var service = new nitrogen.Service(config);
 ```
 
-The first thing we do is define the service that we want our device to connect to.  A [service](/docs/concepts/service.html) in Nitrogen connects authenticated [principals](/docs/concepts/principals.html) (devices, users, applications, etc.) together over [messaging](/docs/concepts/messages.html) where the access and visibility is controlled by the [permissions](/docs/concepts/permissions.html) you have defined for each principal.  You don't need to understand that in detail at the moment -- but there is more detail in these links when you want to.
+The first thing we do is define the service that we want our device to connect to.  A [service](/docs/concepts/service.html) in Nitrogen connects authenticated [principals](/docs/concepts/principals.html) (devices, users, applications, etc.) together over [messaging](/docs/concepts/messages.html) where the access and visibility is controlled by the [permissions](/docs/concepts/permissions.html) you have defined for each principal.  You don't need to understand all of that sentence in detail at the moment -- but there is more detail in these links when you want to.
 
 ```javascript
 
@@ -29,9 +29,9 @@ var camera = new ImageSnapCamera({
     name: "My Computer's Camera"
 });
 
-``` 
+```
 
-This defines the [camera device](/docs/devices/camera.html) that we'd like to use.  A device in Nitrogen implements of a set of functionality behind an interface.
+This defines the [camera device](/docs/devices/camera.html) that we'd like to use.  A device in Nitrogen implements of a set of agreed upon functionality as defined by an interface.
 
 In this case, we are using an implementation of a [camera device](/docs/devices/camera.html) that uses the command line tool `imagesnap` on the Mac to take a picture.  If you are using Linux, replace this class with `FSWebcamCamera`.
 
