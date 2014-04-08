@@ -38,14 +38,16 @@ The first thing we need to do is create a camera device pricipal in Nitrogen. Th
 
 We then install the application to the reactor, passing it the name of this principal and asking it to execute the application under this principal instead of our user principal:
 
-`> n2 reactor install 'Reactor' fswebcam-app --executeAs 'RPi Camera'
+`> n2 reactor install 'Reactor' fswebcam-app --executeAs 'RPi Camera'`
 
 This will install the usb-camera module onto this Nitrogen reactor from node.js's npm package registry. You can watch the status in the console logs or via the state command:
 
-`> n2 reactor state 'Reactor'
+`> n2 reactor state 'Reactor'`
 
 Once the usb-camera instance has installed and is in the state 'stopped', start it up using:
 
-`> n2 reactor start 'Reactor' fswebcam-app
+`> n2 reactor start 'Reactor' fswebcam-app`
 
 This will start the application, which will discover and connect your USB attached camera to Nitrogen as a new device. You can now use the [web admin](https://admin.nitrogen.io) to control it and take snapshots.
+
+Once you've tried that out, continue on to find out how we can use the reactor for [applications that use our devices](/guides/apps/timelapse.html).
