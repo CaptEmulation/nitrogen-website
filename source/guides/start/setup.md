@@ -32,4 +32,4 @@ This will ask you for a password, create an account for you, and store away your
 
 A [principal in Nitrogen](/docs/concepts/principals.html) is an entity that authenticates with the service. It could be a device, user, or even the service itself.
 
-You should see just one principal at this point, the user you just created, since you haven't added any devices to the service. Let's [create our first device](camera.html).
+You will see just one principal at this point probably, the user you just created, since you haven't added any devices to the service. Let's [create our first device](camera.html).

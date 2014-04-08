@@ -4,54 +4,46 @@ title: Nitrogen Reactor
 
 # Reactor
 
-A Reactor is the application execution environment for Nitrogen. It is a supervisory process that manages the complete lifecycle of an application: installing, establishing a security context, starting, stopping, upgrades, and uninstalling. Each application in a reactor executes in its own node.js process, and within that process, within an isolated virtual machine that only has access to a session, its package dependencies, and the Nitrogen client module.
+The Reactor is the application execution environment for Nitrogen. It manages the complete lifecycle of an application: installing, establishing a security context, starting, stopping, upgrades, and uninstalling. Each application in a reactor executes in its own node.js process, and within that process, within an isolated virtual machine where it only has access to its package dependencies and an isolated filesystem.
 
-Reactors themselves watch their stream of reactorCommand messages, perform the appopriate tasks, and emit reactorStatus messages with the new state of all of their instances.
-
-An example of a very simple stub Nitrogen looks like:
+Reactor applications are just npm modules that expose an object that accepts a session and params object in its constructor and exposes two methods: start and stop. An example of a very simple Nitrogen application looks like this:
 
 ```javascript
-var running = false;
-var session;
-var params;
 
-var interval;
+function HelloWorldApp(session, params) {
+    this.session = session;
+    this.params = params;
 
-var periodicFunction = function(){
-    if (running) {
-        session.log.info("app is still running with params: " + JSON.stringify(params));
-    } else {
-        session.log.info("app was asked to stop.");        
-    }
-};
-
-var start = function(s, p) {
-    session = s;
-    params = p;
-
-    running = true;
-    interval = setInterval(periodicFunction, 1000);
-};
-
-var stop = function() {
-    clearInterval(interval);
-    running = false;
-};
-
-setInterval(function() {
-    console.log('app process is still running');
-}, 5000);
-
-module.exports = {
-    start: start,
-    stop:  stop
+    this.running = false;
+    this.interval = null;
 }
+
+HelloWorldApp.prototype.start = function() {
+    this.running = true;
+    this.interval = setInterval(function(){
+        session.log.info("Hello World!");
+    }, 1000);
+}
+
+HelloWorldApp.prototype.stop = function() {
+    clearInterval(this.interval);
+    this.running = false;
+}
+
+module.exports = HelloWorldApp;
+
 ```
 
-Reactors expect the modules that contain Nitrogen applications to expose a very simple interface:
+Nitrogen applications are published like any other npm module and to install them within a reactor, you use the Nitrogen command line tool, where the final argument to this command is the name of the application that you'd like to install:
 
-* start(session, params): Function called when the reactor starts an application. It is passed the session the instance was told to execute under and a free form params object that the application can use to customize its execution that is provided by the reactorCommand that initiated this start.
+`n2 reactor install 'My Reactor' hello-world-app`
 
-* stop(): Function called when the reactor stops an application. Used to perform any required cleanup.
+This will send a reactorCommand message to the reactor named 'My Reactor' and install the application within its own instance. Once installed, you can then start this application using:
 
-These two functions are the only requirements for a Nitrogen application. In all other ways applications are just npm modules.
+`n2 reactor start 'My Reactor' hello-world-app`
+
+And stop it using:
+
+`n2 reactor stop 'My Reactor' hello-world-app`
+
+For a guided tour of using your first Nitrogen application, see the [Applications guide](/guides/apps/reactor.md).
