@@ -30,8 +30,22 @@ Copy this claim code and claim the reactor as your own using the Nitrogen comman
 
 `> n2 principal claim FBSC-7703`
 
-Your reactor should now be visible and running in your Nitrogen cloud.  Let's check on its state to be sure:
+Now that we have the reactor instance running on the Raspberry Pi, we can deploy applications to it.  Let's deploy the fswebcam-app application to it that can take photos with fswebcam.
 
-`> n2 reactor state 'Reactor'`
+The first thing we need to do is create a camera device pricipal in Nitrogen. This will be the security principal this application runs under in the Reactor:
 
-This
+`> n2 principal create --type --capabilities cameraCommand --name 'RPi Camera'`
+
+We then install the application to the reactor, passing it the name of this principal and asking it to execute the application under this principal instead of our user principal:
+
+`> n2 reactor install 'Reactor' fswebcam-app --executeAs 'RPi Camera'
+
+This will install the usb-camera module onto this Nitrogen reactor from node.js's npm package registry. You can watch the status in the console logs or via the state command:
+
+`> n2 reactor state 'Reactor'
+
+Once the usb-camera instance has installed and is in the state 'stopped', start it up using:
+
+`> n2 reactor start 'Reactor' fswebcam-app
+
+This will start the application, which will discover and connect your USB attached camera to Nitrogen as a new device. You can now use the [web admin](https://admin.nitrogen.io) to control it and take snapshots.
