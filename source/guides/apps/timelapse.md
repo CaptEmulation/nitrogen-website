@@ -32,7 +32,7 @@ The timelapse application takes 20 evenly distributed shots during the daylight 
 
 `> n2 principal ls`
 
-Look up your latitude / longitude (remember that west longitudes are negative) using your favorite search engine and then start the application with these parameters (note the single quote escape around the JSON argument and that the keys are double quoted):
+Look up your latitude / longitude using your favorite search engine (remember that west longitudes are negative) and then start the application with these parameters (note the single quote escape around the JSON argument and that the keys are double quoted):
 
 `> n2 reactor start 'Cloud Reactor' timelapse '{"camera_id": "53432d9f32f757d131fbf4a8",`
 `     latitude: "36.9720", longitude: "-122.0263"}'`

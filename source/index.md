@@ -1,23 +1,23 @@
 ---
-title: A platform for building connected devices and applications.
+title: A platform for connecting devices and applications.
 ---
 
 <center>
-    <img class="logo" src="images/logo.png" width="166" height="167" /> 
-    <h1 class="text-center">A platform for building real world devices.</h1>
+    <img class="logo" src="images/logo.png" width="166" height="167" />
+    <h1 class="text-center">A platform for connecting real world devices and applications.</h1>
 </center>
 
 <div class="row" style="margin-top: 20px">
     <div class="col-md-4">
         <h3>Device Platform</h3>
         <p style="font-size: 120%">
-            Nitrogen provides the real-time messaging, authentication, and authorization for your device so you can focus on building your devices and applications.
+            Nitrogen provides the real-time messaging, authentication, and authorization for your device so you can focus on building your application.
         </p>
     </div>
     <div class="col-md-4">
         <h3>Open Source</h3>
         <p style="font-size: 120%">
-            End to end open source. No proprietary client languages, no lock-in to cloud services, no required hardware. Nitrogen is about getting things to communicate on the internet -- not building a seperate internet for things.
+            End to end open source. Built on node.js and JavaScript and runs on any hardware. Nitrogen is about getting things to communicate on the internet -- not building a seperate internet for things.
         </p>
     </div>
 
