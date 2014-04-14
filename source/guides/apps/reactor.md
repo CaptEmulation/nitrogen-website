@@ -18,9 +18,14 @@ You can do this by cloning the Reactor project into its own directory on your de
 
 `> git clone https://github.com/nitrogenjs/reactor reactor`
 
-Navigate into the reactor directory and start the reactor:
+Navigate into the reactor directory. First install its dependencies:
 
-`> node server.js`
+`> npm install` 
+
+Then start the reactor.  The reactor needs to run as root so that it can create a secure jail
+for executing applications:
+
+`> sudo node server.js`
 
 This will start the reactor, and like any device, will provide you with a claim code:
 
