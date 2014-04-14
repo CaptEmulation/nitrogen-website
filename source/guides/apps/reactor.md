@@ -16,11 +16,11 @@ Let's start with setting up a Reactor on the Raspberry Pi to execute the camera 
 
 You can do this by cloning the Reactor project into its own directory on your device:
 
-`git clone https://github.com/nitrogenjs/reactor reactor`
+`> git clone https://github.com/nitrogenjs/reactor reactor`
 
 Navigate into the reactor directory and start the reactor:
 
-`node server.js`
+`> node server.js`
 
 This will start the reactor, and like any device, will provide you with a claim code:
 
