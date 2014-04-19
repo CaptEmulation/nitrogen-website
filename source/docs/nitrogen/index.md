@@ -1,10 +1,11 @@
 # Client Module
 
-Nitrogen is typically used through a JavaScript client module.  This section describes the APIs that each of the classes in this module exposes.
+Nitrogen provides a JavaScript client module to make interacting with the REST and realtime endpoints of the Nitrogen service. This section describes the each of the objects in this module.
 
 ## Installation
 
-If you are building a node.js application you should install nitrogen via npm:
+Installation of nitrogen is via npm for client applications using node.js
+For client applications using node.js, install nitrogen is via npm:
 
 `npm install nitrogen`
 
