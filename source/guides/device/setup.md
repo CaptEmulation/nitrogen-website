@@ -15,7 +15,9 @@ To prepare our Raspberry Pi device to run Nitrogen applications, we need to:
 2. Install node.js on the device from the Pi's shell:
 
 `> wget http://node-arm.herokuapp.com/node_latest_armhf.deb`
+
 `> sudo dpkg -i node_latest_armhf.deb`
+
 `> node --version` (should display version 0.10 or greater)
 
 And with that you have node.js installed. Let's [setup the camera device application](camera.html) next.

@@ -17,7 +17,7 @@ title: A platform for connecting devices and applications.
     <div class="col-md-4">
         <h3>Open Source</h3>
         <p style="font-size: 120%">
-            End to end open source. Built on node.js and JavaScript and runs on any hardware. Nitrogen is about getting things to communicate on the internet -- not building a seperate internet for things.
+            End to end open source. Built on node.js and runs on any hardware. Nitrogen is about getting things to communicate on the internet -- not building a seperate internet for things.
         </p>
     </div>
 
@@ -29,16 +29,31 @@ title: A platform for connecting devices and applications.
     </div>
 </div>
 
-<h2 style="margin-bottom: 20px">Connecting and controlling devices is this easy with Nitrogen:</h2>
+<h3>Easy Application Model</h3>
+<p style="font-size: 120%">
+    Let's say you wanted to watch four thermostats in your house and use these to control a heater. With Nitrogen, it only takes a few lines of code to combine the context of these devices into a realtime control application:
+</p>
 
 ```javascript
-var light = new Light({ nickname: 'livingRoomLight' });
-service.connect(light, function(err, session) {
+var temperatures = {};
+var SETPOINT = 21.0;
+var lastCommand;
 
-    // listen for messages of type lightCommand and act on them
-    session.onMessage({ type: 'lightCommand' }, function(err, message) {
-        light.set(message.body.command);
-    });
+session.onMessage({ type: 'temperature' }, function(message) {
+    temperatures[message.from.id] = message.body.temperature;
+
+    var avg = avgTemperature(temperatures);
+
+    if (avg && avg < SETPOINT && (!lastCommand || !lastCommand.body.on)) {
+        lastCommand = new nitrogen.Message({
+            type: 'switchCommand',
+            to: heater.id,
+            body: {
+                on: true
+            }
+        }.send(session));
+    }
+
 });
 ```
 
