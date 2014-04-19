@@ -11,13 +11,13 @@ title: A platform for connecting devices and applications.
     <div class="col-md-4">
         <h3>Device Platform</h3>
         <p style="font-size: 120%">
-            Nitrogen provides the real-time messaging, authentication, and authorization for your device so you can focus on building your application.
+            Nitrogen provides the real-time messaging, security, and management for your device so you can focus on building your application.
         </p>
     </div>
     <div class="col-md-4">
         <h3>Open Source</h3>
         <p style="font-size: 120%">
-            End to end open source. Built on node.js and runs on any hardware. Nitrogen is about getting things to communicate on the internet -- not building a seperate internet for things.
+            End to end open source, runs on any hardware, and extensively leverages the web and node.js ecosystems. Nitrogen is about getting things to communicate on the internet -- not building a seperate internet for things.
         </p>
     </div>
 
@@ -57,4 +57,4 @@ session.onMessage({ type: 'temperature' }, function(message) {
 });
 ```
 
-<a href="/guides/start/setup.html" class="btn green"  style="margin-top: 10px">Learn More</a>
+<a href="/docs/concepts/overview.html" class="btn green"  style="margin-top: 10px">Learn More</a>

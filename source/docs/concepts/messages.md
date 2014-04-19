@@ -4,7 +4,7 @@ title: Nitrogen Messages
 
 # Messages
 
-Messages are the core construct of the Nitrogen framework. Nearly everything in Nitrogen use messages to communicate with each other. The Nitrogen service at its core essentially applies a visibility model based, permissioning scheme, and real time and queued subscription model around messages.
+Messages are the core of the Nitrogen framework. Nearly everything in Nitrogen use messages to communicate with each other. The Nitrogen service at its core essentially applies a visibility model based, permissioning scheme, and real time and queued subscription model around messages.
 
 ## Properties
 
