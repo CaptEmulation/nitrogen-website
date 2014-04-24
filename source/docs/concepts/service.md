@@ -4,7 +4,7 @@ title: Nitrogen Service
 
 # Service
 
-A service is a principal and messaging hub in Nitrogen. It authenticates and authorizes principals, manages messaging between principals, and provides real time message subscriptions for messages. A typical device application using the JavaScript library looks like this:
+A service is a principal and messaging hub in Nitrogen. It authenticates and authorizes principals, manages messaging between principals, and provides real time message subscriptions. A typical device application using the JavaScript library looks like this:
 
 ```javascript
 

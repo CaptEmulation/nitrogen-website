@@ -8,13 +8,13 @@ This guide will walk you through everything you need to do to get you setup and 
 
 ### Installation
 
-Nitrogen is uses node.js extensively. If you don't already have node.js installed, install it from [http://nodejs.org](http://nodejs.org).
+Nitrogen uses node.js extensively. If you don't already have node.js installed, install it from [http://nodejs.org](http://nodejs.org).
 
 Then use npm to install Nitrogen's command line tool:
 
 `> npm install -g nitrogen-cli`
 
-nitrogen-cli is no fun to type, so the command line tool uses the alias n2.  Let's make sure it all is installed correctly by asking for help:
+<b>nitrogen-cli</b> is no fun to type, so the command line tool uses the alias n2.  Let's make sure it all is installed correctly by asking for help:
 
 `> n2 help`
 
@@ -24,12 +24,12 @@ This should display of the top level commands available to you with the command 
 
 With the command line tool installed, let's create a user account with the hosted Nitrogen service:
 
-`> n2 user create --email <your-email> --name 'Your Name'`
+`> n2 user create`
 
-This will ask you for a password, create an account for you, and store away your credentials for use with the command line tool. Let's run one more command just to make sure it is all up and working correctly:
+This will ask you for a password, create an account for you, and store away your credentials for use with the command line tool. Let's run one more command just to make sure it is all up and working correctly by asking for all of the security principals that the service knows about:
 
 `> n2 principal ls`
 
 A [principal in Nitrogen](/docs/concepts/principals.html) is an entity that authenticates with the service. It could be a device, user, or even the service itself.
 
-You will see just one principal at this point probably, the user you just created, since you haven't added any devices to the service. Let's [create our first device](camera.html).
+You will likely see just one principal at this point, the user you just created, since you haven't added any devices to the service. Let's [create our first device](camera.html).

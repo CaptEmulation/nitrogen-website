@@ -17,7 +17,7 @@ title: A platform for connecting devices and applications.
     <div class="col-md-4">
         <h3>Open Source</h3>
         <p style="font-size: 120%">
-            End to end open source, runs on any hardware, and extensively leverages the web and node.js ecosystems. Nitrogen is about getting things to communicate on the internet -- not building a seperate internet for things.
+            End to end open source, runs on any hardware, and extensively leverages the JavaScript ecosystem. Nitrogen is about getting things to communicate on the internet -- not building a seperate internet for things.
         </p>
     </div>
 

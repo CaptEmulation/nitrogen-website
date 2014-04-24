@@ -1,6 +1,6 @@
 # image
 
-The image schema contains the following fields in its body:
+The <b>image</b> schema contains the following fields in its body:
 
 ## Implementation
 
@@ -8,6 +8,8 @@ This message schema is built into the Nitrogen service.
 
 ## Properties
 
-The following properties are used in the body element of an image message:
+For an image message, if you use blob storage for the image, you should set the <b>link</b> property of the message to the id of that blob.
 
-* url (string, required): The url to the image.
+The following properties are used in the body element:
+
+* <b>url</b> (string, required): The url to the image.

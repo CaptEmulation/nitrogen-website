@@ -4,7 +4,7 @@ title: Camera Device with Nitrogen
 
 ## Camera Device
 
-With an account created and the Nitrogen command line tool [set up](setup.md), let's connect our first device.
+With an account created and the Nitrogen command line tool [set up](setup.md) in the previous guide, let's connect our first device.
 
 To avoid the complexities around actual hardware for the moment, we're going to build a device around something that we all have: a camera on our laptop.  Let's make that camera internet controllable.
 
@@ -14,13 +14,13 @@ The first step is to clone a repo from the Nitrogen project and walk through the
 
 ### Walkthrough
 
-The camera project you just cloned is a canonical example for what a standalone device application looks like. Let's walk through the camera.js file and understand what's going on.
+The camera project you just cloned is a canonical example of what a standalone device application looks like. Let's walk through the camera.js file and understand what's going on.
 
 ```javascript
 var service = new nitrogen.Service(config);
 ```
 
-The first thing we do is define the service that we want our device to connect to.  A [service](/docs/concepts/service.html) in Nitrogen connects authenticated [principals](/docs/concepts/principals.html) (devices, users, applications, etc.) together over [messaging](/docs/concepts/messages.html) where the access and visibility is controlled by the [permissions](/docs/concepts/permissions.html) you have defined for each principal.  You don't need to understand the details of that sentence -- but there is more detail in these links when you want to.
+The first thing we do is define the service that we want our device to connect to.  A [service](/docs/concepts/service.html) in Nitrogen connects authenticated [principals](/docs/concepts/principals.html) (devices, users, applications, etc.) together over [messaging](/docs/concepts/messages.html) where the access and visibility is controlled by the [permissions](/docs/concepts/permissions.html) you have defined for each principal. You don't need to understand the all of the details of that sentence for this guide -- but there is more detail in these links when you want to.
 
 ```javascript
 

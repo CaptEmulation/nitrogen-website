@@ -1,21 +1,21 @@
 # Camera
 
-A camera device can take snapshots and optionally detect motion in response to [cameraCommand](../schemas/cameraCommand.html) messages.  A camera's operation is typically controlled via a [CameraManager](../managers/cameraManager.html).
+A <b>camera</b> device can take snapshots in response to [cameraCommand](../schemas/cameraCommand.html) messages.  A camera's operation is typically controlled via a [CameraManager](../managers/cameraManager.html).
 
 ## Interface
 
 A camera device implements the following interface:
 
-* snapshot(options, callback): Take a snapshot.
-    * options: An object literal that can contain the following options:
+* <b>snapshot</b>(options, callback): Take a snapshot.
+    * <b>options</b>: An object literal that can contain the following options:
         * width
         * height
         * path: Where the image should be stored on the device.
 
-    * callback(err, options): Callback with any error and the options used during the shot.
+    * <b>callback</b>(err, options): Callback with any error and the options used during the shot.
 
-* status(callback): Return the status of the camera device. Called before heartbeat operations on the device.
-    * callback(error, status): 
+* <b>status</b>(callback): Return the status of the camera device. Called before heartbeat operations on the device.
+    * <b>callback</b>(error, status): 
         * error: True if there is an error with the camera device.
         * status: A free form object with the current status of the camera device. 
 

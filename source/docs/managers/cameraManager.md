@@ -10,7 +10,7 @@ CameraManager is included in the module `nitrogen-camera`. You can add camera fu
 
 ## Example Usage
 
-A CameraManager is typically used within an established session handler for a camera.  Here is an example adapted from the sample [camera](https://github.com/nitrogenjs/camera) device project:
+A CameraManager is typically used within an established session handler for a camera.  Here is an example adapted from the [camera](https://github.com/nitrogenjs/camera) device project:
 
 ```javascript
 var RaspberryPiCamera = require('raspberrypi-camera');
