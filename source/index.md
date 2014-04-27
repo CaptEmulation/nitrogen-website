@@ -2,36 +2,43 @@
 title: A platform for connecting devices and applications.
 ---
 
-<center>
-    <img class="logo" src="images/logo.png" width="166" height="167" />
-    <h1 class="text-center">A platform for connecting real world devices and applications.</h1>
-</center>
+<table width=100%>
+    <tr>
+        <td>
+            <img class="logo" src="images/logo.png" width="166" height="167" />
+        </td>
+        <td>
+            <h1 class="text-center">Nitrogen connects devices together into applications.</h1>
+        </td>
+    </tr>
+</table>
 
 <div class="row" style="margin-top: 20px">
     <div class="col-md-4">
-        <h3>Device Platform</h3>
+        <h3>Platform</h3>
         <p style="font-size: 120%">
-            Nitrogen provides the real-time messaging, security, and management for your device so you can focus on building your application.
+            Nitrogen provides a real-time messaging and device management platform so that you can focus on your application or device.
         </p>
     </div>
     <div class="col-md-4">
-        <h3>Open Source</h3>
+        <h3>Build Device Grids</h3>
         <p style="font-size: 120%">
-            End to end open source, runs on any hardware, and extensively leverages the JavaScript ecosystem. Nitrogen is about getting things to communicate on the internet -- not building a seperate internet for things.
+            Easily deploy and manage applications on tens to thousands of devices and combine them into applications.
         </p>
     </div>
 
     <div class="col-md-4">
         <h3>Secure</h3>
         <p style="font-size: 120%">
-            Real world things are often more sensitive than the computing devices we already have. Nitrogen provides a built-in authentication and authorization system to keep your devices, users, and data safe.
+            Nitrogen has a built-in authentication and authorization system to keep your devices, users, and data safe.
         </p>
     </div>
 </div>
 
-<h3>Easy Application Model</h3>
+<h3>Application Model</h3>
+
 <p style="font-size: 120%">
-    Let's say you wanted to watch four thermostats in your house and use these to control a heater. With Nitrogen, it only takes a few lines of code to combine the context of these devices into a realtime control application:
+   Watching the temperatures from four devices and controlling a heater is as simple as:
 </p>
 
 ```javascript
@@ -44,7 +51,7 @@ session.onMessage({ type: 'temperature' }, function(message) {
 
     var avg = avgTemperature(temperatures);
 
-    if (avg && avg < SETPOINT && (!lastCommand || !lastCommand.body.on)) {
+    if (avg && avg < SETPOINT) {
         lastCommand = new nitrogen.Message({
             type: 'switchCommand',
             to: heater.id,
@@ -56,5 +63,22 @@ session.onMessage({ type: 'temperature' }, function(message) {
 
 });
 ```
+
+<p style="font-size: 120%">
+    Nitrogen extensively leverages the node.js ecosystem so publishing this application is as simple as:
+</p>
+
+```javascript
+> npm publish
+```
+
+<p style="font-size: 120%">
+    and you can installing it on a device (or hundreds of devices) with just one command:
+</p>
+
+```javascript
+> n2 reactor install 'Raspberry Pi' my-app
+```
+
 
 <a href="/docs/concepts/overview.html" class="btn green"  style="margin-top: 10px">Learn More</a>
