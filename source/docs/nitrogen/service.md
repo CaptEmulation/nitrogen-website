@@ -5,14 +5,14 @@ class Service
 Service.authenticate(principal, callback)
 -----------------------------------------
 Authenticate this principal with the Nitrogen service.  The mechanism used to authenticate
-depends on the type of principal. For users, an email and password is used, otherwise the
-secret generated during creation is used.
+depends on the type of principal. For users, an email and password is used. For other principals
+public key encryption is verify a signed nonce value for authentication.
 
 
 
 **Parameters**
 
-**principal**:  *Object*,  The principal to authenticate with this service. The principal should include the email/password for a user principal or the secret for other principal types.
+**principal**:  *Object*,  The principal to authenticate with this service. The principal should include the email/password for a user principal or the private_key for other principal types.
 
 **callback**:  *Function*,  Callback function with signature f(err, session, principal).
 

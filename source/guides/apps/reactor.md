@@ -36,7 +36,7 @@ Now that we have the reactor instance running on the Raspberry Pi, we can deploy
 
 We want to run this device application in the security context of a camera device. You can create this principal using the command line tool as well:
 
-`> n2 principal create --type --capabilities cameraCommand --name 'Pi Camera'`
+`> n2 principal create --type device --name 'Pi Camera'`
 
 We then install the application to the reactor, passing it the name of this principal and asking it to execute the application under this principal:
 

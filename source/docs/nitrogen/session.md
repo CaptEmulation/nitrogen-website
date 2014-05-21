@@ -60,9 +60,9 @@ Impersonate the principal with the authorization context of this session.  Used 
 
 **callback.principal**:  *Object*,  The impersonated principal.
 
-Session.onAuthFailure(principal, callback)
-------------------------------------------
-Provide a callback function on authentication failure.
+Session.onFailure(principal, callback)
+--------------------------------------
+Passed callback function will be called on session failure.
 
 
 

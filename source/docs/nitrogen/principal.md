@@ -6,7 +6,7 @@ Principal.authenticate(config, callback)
 ----------------------------------------
 Authenticate this principal with the service.  The mechanism used to authenticate depends on
 the type of principal. For users, an email and password is used.  For all other principals,
-the secret returned from 'create' will be used.
+public key auth will be used.
 
 
 
@@ -123,37 +123,4 @@ By default this implementation simply makes a no status callback.
 **Parameters**
 
 **callback**:  *Function*,  Callback function of the form f(err, status).
-
-Principal.changePassword(session, currentPassword, newPassword, callback)
--------------------------------------------------------------------------
-Change the password for this user principal as part of this session.
-
-Only the current principal may change their password.  If the current principal is not a user,
-the request will fail with a 400 Bad Request.
-
-
-
-**Parameters**
-
-**session**:  *Object*,  An open session with a Nitrogen service.
-
-**currentPassword**:  *String*,  The current password for the user.
-
-**newPassword**:  *String*,  The new password for the user.
-
-**callback**:  *Function*,  Callback function with signature f(err).
-
-Principal.resetPassword(config, email, callback)
-------------------------------------------------
-Reset the password for the user principal with this email address.
-
-
-
-**Parameters**
-
-**config**:  *Object*,  The headwaiter returned config for the Nitrogen service.
-
-**email**:  *String*,  The email for the user you'd like to reset the password for.
-
-**callback**:  *Function*,  Callback function with signature f(err, principal).
 
