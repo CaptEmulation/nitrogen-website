@@ -4,7 +4,7 @@
 
 ## Implementation
 
-This message schema is built into the Nitrogen service.
+This message schema is included with the Nitrogen service.
 
 ## Properties
 

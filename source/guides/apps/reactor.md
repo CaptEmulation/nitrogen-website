@@ -2,45 +2,39 @@
 title: Nitrogen Reactor
 ---
 
-## Nitrogen Applications
+## Device Applications
 
-As you've seen in the previous two guides, there were a lot of repeated steps in setting up the typical device application. In this guide, we'll see how we can reduce this and at the same time be able to share device applications with others in the Nitrogen community using the [Nitrogen Reactor](/docs/concepts/reactor.md).
+As you've seen in the previous two guides, there were a lot of repeated steps in setting up the typical device application. In this guide, we'll see how we can automate 
+all of these steps while at the same time being able to remotely manage our devices using the [Nitrogen Reactor](/docs/concepts/reactor.md).
 
-This guide builds on the [hardware device guide](/guides/device/setup.md) and assumes you have already have a Raspberry Pi device up and running. If you don't, jump back to that guide and complete that first.
+The [Reactor](/docs/concepts/reactor.md) is Nitrogen's application execution environment. Applications in Nitrogen are written in JavaScript, are passed a session and parameters at startup, and implement <b>start</b> and <b>stop</b> methods. The [Reactor](/docs/concepts/reactor.md) manages the execution of these modules based on command messages that are sent to it. This allows us to install, start, stop, and uninstall applications to it without having to have network or shell access to the device.
 
-The [Reactor](/docs/concepts/reactor.md) is Nitrogen's application execution environment. Applications in Nitrogen are simply node.js modules that are passed a sessions and parameters at startup and implement <b>start</b> and <b>stop</b> methods. 
+For the Raspberry Pi, the Nitrogen project mantains prebuilt versions of the Raspbian distribution with the Reactor preinstalled. You can download this image from the [web admin](https://admin.nitrogen.io) under the API Keys menu item. The image you download will also automatically be personalized with your API key so no configuration of this image is needed.
 
-In this guide, we'll see how we can use the Reactor for both device and cloud applications. Let's start with setting up a Reactor on the Raspberry Pi to execute the camera device application.
+Once you have the image, shutdown the Raspberry Pi if necessary and remove the SD card.  Insert this SD card into your computer and flash this image to your SD card with the method appropriate for your operating system:
 
-First, clone the Reactor project into its own directory on your device:
+#### Windows:
+  + Install Win32DiskImager and use the GUI to burn the image to the SD card.
 
-`> git clone https://github.com/nitrogenjs/reactor reactor`
+#### MacOS: 
+  + sudo diskutil list (note the disk number for your flash drive in the listing that follows the form /dev/rdiskX)
+  + sudo diskutil unmountDisk /dev/rdiskX 
+  + sudo dd bs=128m if=raspbian-xxxxxxxxxxxxxxx.img of=/dev/rdiskX`
 
-Navigate into the project's directory and install its dependencies:
+#### Linux:
+  + [Follow these instructions](http://xmodulo.com/2013/11/write-raspberry-pi-image-sd-card.html)
 
-`> npm install` 
-
-Then start the reactor. The reactor needs to run as root so that it can create a secure jail for executing applications:
-
-`> sudo node server.js`
-
-This will start the reactor, and like any device, will provide you with a claim code:
-
-`This principal (533edfae242d25eab7ff036f) can be claimed using code: FBSC-7703`
-
-Claim the reactor as your own using the Nitrogen command line tool:
-
-`> n2 principal claim FBSC-7703`
+With the SD card flashed, put the SD card back into the Raspberry Pi, connect it to ethernet and power it on. The Raspberry Pi will boot and automatically provision itself with the Nitrogen service. It will appear as a reactor principal type, which means that it can receive and execute Nitrogen applications.
 
 Now that we have the reactor instance running on the Raspberry Pi, we can deploy applications to it. Let's deploy the <b>fswebcam-app</b> application to it that can take photos.
 
 We want to run this device application in the security context of a camera device. You can create this principal using the command line tool as well:
 
-`> n2 principal create --type device --name 'Pi Camera'`
+`> n2 principal create --type device --name 'Camera'`
 
 We then install the application to the reactor, passing it the name of this principal and asking it to execute the application under this principal:
 
-`> n2 reactor install 'Reactor' fswebcam-app --executeAs 'Pi Camera'`
+`> n2 reactor install 'Reactor' fswebcam-app --executeAs 'Camera'`
 
 This will install the <b>fswebcam-app</b> module into its own container within this Nitrogen reactor from node.js's npm package registry. You can watch the status in the console logs or via the state command:
 
@@ -52,4 +46,4 @@ Once the fswebcam-app instance is installed it will show as being in 'stopped' s
 
 This will start the application, which will discover and connect your USB attached camera to Nitrogen as a new device. You can now use the [web admin](https://admin.nitrogen.io) to control it and take snapshots as we have seen in the previous guides.
 
-Once you've tried that out, continue on to the next guide that will show you can use the reactor for [applications that use devices](/guides/apps/timelapse.html).
+Once you've tried that out, continue on to the next guide that will show how you can also use the reactor to write [applications that use devices](/guides/apps/timelapse.html).

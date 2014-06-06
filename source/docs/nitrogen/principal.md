@@ -124,3 +124,19 @@ By default this implementation simply makes a no status callback.
 
 **callback**:  *Function*,  Callback function of the form f(err, status).
 
+Principal.update(session, id, updates, callback)
+------------------------------------------------
+Performs a partial update of a principal.
+
+
+
+**Parameters**
+
+**session**:  *Object*,  An open session with a Nitrogen service.
+
+**id**:  *Object*,  The id of the principal to update.
+
+**updates**:  *Object*,  The update to apply to this principal.
+
+**callback**:  *Function*,  Callback function of the form f(err, resp, body).
+

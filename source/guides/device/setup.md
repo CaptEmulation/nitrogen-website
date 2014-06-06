@@ -6,7 +6,7 @@ title: Setup
 
 This guide builds on the [first steps guide](/guides/start/setup.md) where we built a connected computer webcam. The step we'll take in this guide is to connect a Raspberry Pi with an attached USB camera to Nitrogen.
 
-For this walkthrough, we'll use a [Raspberry Pi](http://www.adafruit.com/products/998), a USB webcam, and a 4GB SD flash card but any node.js capable embedded hardware platform should work as well.
+For this walkthrough, we'll use a [Raspberry Pi](http://www.adafruit.com/products/998), a USB webcam, and a 4GB SD flash card.
 
 To prepare our Raspberry Pi device to run Nitrogen applications, we need to:
 
@@ -21,3 +21,7 @@ To prepare our Raspberry Pi device to run Nitrogen applications, we need to:
 `> node --version` (should display version 0.10 or greater)
 
 And with that you have node.js installed. Let's [setup the camera device application](camera.html) next.
+
+### Shortcut
+
+For the Raspberry Pi, the Nitrogen project mantains prebuilt versions of the Raspbian distribution with node.js (and the Reactor, which we'll discuss in the next guide) preinstalled. You can download this image from the [web admin](https://admin.nitrogen.io) under the API Keys menu item. The image you download will also automatically be personalized with your API key so no configuration of this image is needed.
