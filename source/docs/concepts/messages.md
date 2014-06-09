@@ -4,13 +4,13 @@ title: Nitrogen Messages
 
 # Messages
 
-Messages are the core of the Nitrogen framework. Nearly everything in Nitrogen uses messages for communication with each other including most of the parts of the core Nitrogen service platform itself. The Nitrogen service at its core essentially is a messaging router where security permissions define what messages a security principal can send, receive, and subscribe to.
+Messages are the core of the Nitrogen framework. Nearly everything in Nitrogen uses messages for communication with each other, including most of the parts of the core Nitrogen service platform itself. The Nitrogen service at its core essentially is a messaging broker where security permissions define what messages a security principal can send, receive, and subscribe to.
 
 ## Properties
 
 All messages have the following properties in Nitrogen:
 
-* <b>type</b>: Messages of a given type conform to a particular schema unless they are prefixed with a underscore (eg. "_custom"). This enables principals in the Nitrogen system to communicate with each other using a common vocabulary without having to know intimate details of each other's implementation. Incoming messages are checked for conformance to the schema at creation time unless this is explicitly turned off in config.js.
+* <b>type</b>: Messages of a given type conform to a particular schema unless they are prefixed with a underscore (eg. "_custom"). This enables principals in the Nitrogen system to communicate with each other using a common schema vocabulary without having to know intimate details of each other's implementation. Incoming messages are checked for conformance to the schema at creation time unless this is explicitly configured in the service.
 * <b>ver</b>: The version of the schema that this message is using. Default: 0.1
 * <b>ts</b>: A timestamp that expresses the effective time of this message.  If not assigned, will default to the timestamp when message is created by the service.
 * <b>expires</b>: When this message expires. If not provided, will default to the default message lifetime that the service has configured.

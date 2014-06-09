@@ -22,12 +22,12 @@ A permission in Nitrogen describes actions that principal(s) can or cannot take 
 
 * <b>authorized</b>: Boolean declaring if matches to this permission authorize or forbid the action. Default: true
 
-* <b>priority</b>: The priority this principal has in relation to other permissions.
+* <b>priority</b>: The priority this principal has in relation to other permissions. Generally, you should be able to apply `Permission.NORMAL_PRIORITY` but for more complex authorization scenarios you may need to have a finer grain priority model.
 
 * <b>filter</b>: An object that specifies additional filters that should be applied to a relevant object at authorization time.  For example, { type: "ip" } would be used to limit matches with this permission to only messages with the type 'ip'.
 
-* <b>expires</b>: An expiration date for this permission. After this expiration date, the permission will be disregarded and removed from the system.
+* <b>expires</b>: An expiration date for this permission. After this expiration date, the permission will be no longer considered for authorizations and removed from the system.
 
 ## Evaluation Order
 
-Active permissions for a principal are examined in priority order and the first match is used to determine if the action is authorized. Lower numbers are higher priority.
+Active permissions for a principal are examined in priority order and the first match is used to determine if the action is authorized. Lower numbers are higher priority. 

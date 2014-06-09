@@ -33,7 +33,7 @@ var camera = new ImageSnapCamera({
 
 This defines the [camera device](/docs/devices/camera.html) that we'd like to use.  A device in Nitrogen implements of a set of agreed upon functionality that depends on the commands it is able to execute.
 
-In this case, we are using an implementation of a [camera device](/docs/devices/camera.html) that uses the command line tool `imagesnap` on the Mac to take a picture. If you are using Linux, replace this class with `FSWebcamCamera`.
+In this case, we are using an implementation of a [camera device](/docs/devices/camera.html) that uses the command line tool `imagesnap` on the Mac to take a picture. If you are using Linux, replace this class with `FSWebcamCamera` and if you are using Windows replace it with `CommandCamCamera`.
 
 The next line connects the camera to the Nitrogen service:
 
@@ -51,7 +51,7 @@ new CameraManager(camera).start(session, function(err, message) {
 });
 ```
 
-In Nitrogen, users, devices, and applications communicate with each other over messaging. There is a class of messages called [commands](/docs/concepts/commands.html) that control the operation of a device. Principals, if they have the permission to do so, can send messages to devices to ask that a particular operation is performed. Devices watch their stream of messages, take appropriate action in response to commands, and send messages in response.
+In Nitrogen, users, devices, and applications communicate with each other over messaging. There is a class of messages called [commands](/docs/concepts/commands.html) that control the operation of a device. Principals, if they have the permission to do so, can send messages to devices to ask that a particular operation is performed. Devices watch their stream of messages, take appropriate action(s) in response to commands, and send messages in response.
 
 Because watching these message streams is a common operation, the client library defines a [commandManager](/docs/nitrogen/commandManager.html) class that provides this functionality that can you can extend. For this device, we are using the [CameraManager](/docs/managers/cameraManager.html) subclass that knows how to control the camera device given a message stream that contains cameraCommands. Behind the scenes, the [CameraManager](/docs/managers/cameraManager.html) opens a message subscription to receive these messages in real time.
 
@@ -59,25 +59,23 @@ We need to make one modification to the project before we can connect our camera
 
 `> n2 apikeys ls`
 
-Copy the key and either export an environmental variable:
+Copy the key and export an environmental variable to your .bash_profile/.bashrc or through the Control Panel:
 
-`> export API_KEY=[key]`
+`API_KEY=[key]` 
 
-or directly edit config.js and assign api_key there to this value.
-
-Adding this api key will automatically associate this device with your account when the device is started.
+Adding this api key will automatically associate this device with your account when the device is created the first time.
 
 ### Start 'er up
 
-Before we can start the device, we need to install the command line tool that the camera device uses to capture an image.  If you're on a Mac, install the `imagesnap` package using:
+Before we can start the device, we need to install the command line tool that the camera device uses to capture an image.  
 
-`> brew install imagesnap`
+* Mac: Install the `imagesnap` package using: `brew install imagesnap`
 
-or if you're using Linux (Ubuntu in this case):
+* Linux (Ubuntu in this case): `sudo apt-get install fswebcam`
 
-`> sudo apt-get install fswebcam`
+* Windows: [Install CommandCam](http://batchloaf.wordpress.com/commandcam/) and place it in your path.
 
-Finally, we need to install the dependencies for our camera app:
+With the binaries available, install the dependencies for our camera app:
 
 `> npm install`
 

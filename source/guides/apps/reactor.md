@@ -9,12 +9,12 @@ all of these steps while at the same time being able to remotely manage our devi
 
 The [Reactor](/docs/concepts/reactor.md) is Nitrogen's application execution environment. Applications in Nitrogen are written in JavaScript, are passed a session and parameters at startup, and implement <b>start</b> and <b>stop</b> methods. The [Reactor](/docs/concepts/reactor.md) manages the execution of these modules based on command messages that are sent to it. This allows us to install, start, stop, and uninstall applications to it without having to have network or shell access to the device.
 
-For the Raspberry Pi, the Nitrogen project mantains prebuilt versions of the Raspbian distribution with the Reactor preinstalled. You can download this image from the [web admin](https://admin.nitrogen.io) under the API Keys menu item. The image you download will also automatically be personalized with your API key so no configuration of this image is needed.
+For the Raspberry Pi, the Nitrogen project mantains prebuilt versions of the Raspbian distribution with the Reactor preinstalled. You can download this image from the [web admin](https://admin.nitrogen.io) under the API Keys top navigation item. The image you download will also automatically be personalized with your API key so no configuration of this image is needed.
 
 Once you have the image, shutdown the Raspberry Pi if necessary and remove the SD card.  Insert this SD card into your computer and flash this image to your SD card with the method appropriate for your operating system:
 
 #### Windows:
-  + Install Win32DiskImager and use the GUI to burn the image to the SD card.
+  + Install [Win32DiskImager](http://sourceforge.net/projects/win32diskimager/) and use its GUI to burn the image to the SD card.
 
 #### MacOS: 
   + sudo diskutil list (note the disk number for your flash drive in the listing that follows the form /dev/rdiskX)
@@ -28,7 +28,7 @@ With the SD card flashed, put the SD card back into the Raspberry Pi, connect it
 
 Now that we have the reactor instance running on the Raspberry Pi, we can deploy applications to it. Let's deploy the <b>fswebcam-app</b> application to it that can take photos.
 
-We want to run this device application in the security context of a camera device. You can create this principal using the command line tool as well:
+We want to run this device application in the security context of a camera device. You can create this principal using the command line tool:
 
 `> n2 principal create --type device --name 'Camera'`
 

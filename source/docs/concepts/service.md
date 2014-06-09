@@ -23,11 +23,11 @@ service.connect(light, function(err, session, light) {
 });
 ```
 
-When you use the Nitrogen client library, the service class manages authentication and session management for you. You provide it a callback function that describes the work you'd like it perform after a session is established.  Its possible that your session will fail.  The service class handles reconnection / reauthorization transparently for you and will call you back again when a connection is re-established.
+When you use the Nitrogen client library, the service class manages authentication and session management for you. You provide it a callback function that describes the work you'd like it perform after a session is established.  Its possible that your session will fail.  The service class handles reconnection / reauthorization transparently for you and will call you back again when a connection is re-established with the new session.
 
 ## Sessions
 
-When a principal authenticates with the service, it is provided an access token for subsequent service requests. The client library automatically manages these details for you and encapsulates this in a session object for you. All of the client functions that interact with the service in the context of a principal take a session to use in that operation:
+When a principal authenticates with the service, it is provided an access token for subsequent service requests in the form of a session object. All of the client functions that interact with the service in the context of a principal take a session to use in that operation:
 
 ```javascript
 nitrogen.Message.find(session, { to: camera.id }, function(err, messages) {
@@ -35,4 +35,4 @@ nitrogen.Message.find(session, { to: camera.id }, function(err, messages) {
 });
 ```
 
-The service can automatically renew a session as it nears the end of the AccessToken's lifetime. This detail is again automatically handled for you by the Service and Session class.
+The service can automatically renew a session as it nears the end of the AccessToken's lifetime. This renewal is automatically handled for you by the Session class of the client library.

@@ -4,7 +4,7 @@ title: Timelapse Photos
 
 ## Applications
 
-In this guide, we are going to set up your first instance of a Reactor that you can execute an application in. In this case, the reactor is going to reside on your laptop.
+In this guide, we are going to set up your first instance of a Reactor that you can execute an application in. In this case, the Reactor is going to reside on your laptop.
 
 Just like you did on the Raspberry Pi in the previous guide step, move to a development directory and clone the Reactor project into this directory:
 
@@ -18,13 +18,19 @@ Now that we have the reactor instance running on your computer, we can deploy ap
 
 This time we are going to deploy an application called 'timelapse' that knows how to take timelapse photos using the camera we created in the previous step.
 
-`> n2 reactor install 'Laptop Reactor' timelapse`
+We want to run this application in its own security context. You can create this principal using the command line tool:
+
+`> n2 principal create --type app --name 'Timelapse App'`
+
+And install the application to the Reactor that will execute as this application:
+
+`> n2 reactor install 'Laptop Reactor' timelapse --executeAs 'Timelapse App'`
 
 The timelapse application takes 20 evenly distributed shots during the daylight hours using a camera. To do that, it needs a camera id and the latitude/longitude of the camera at startup. Let's get the camera ID using the following command:
 
-`> n2 principal ls`
+`> n2 device ls`
 
-Look up your latitude / longitude using your favorite search engine (remember that west longitudes are negative) and then start the application with these parameters (note the single quote escape around the JSON argument and that the keys are double quoted):
+Look up your latitude / longitude using your favorite search engine (remember that west longitudes and south latitudes are negative) and then start the application with these parameters (note the single quote escape around the JSON argument and that the keys are double quoted):
 
 `> n2 reactor start 'Laptop Reactor' timelapse '{"camera_id": "53432d9f32f757d131fbf4a8",`
 `     latitude: "36.9720", longitude: "-122.0263", only_daytime: true}'`
