@@ -24,7 +24,7 @@ title: A platform for connecting devices and applications.
     <div class="col-md-4">
         <h3>Manage devices</h3>
         <p style="font-size: 120%">
-            Remotely install applications, monitor their operation, and control and receive telemetry from them with messages. 
+            Automatic provisioning, operational monitoring, remotely install applications, and control and receive data from them using messaging. 
         </p>
     </div>
 
