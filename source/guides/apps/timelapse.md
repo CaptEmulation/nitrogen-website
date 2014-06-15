@@ -2,7 +2,7 @@
 title: Timelapse Photos
 ---
 
-## Applications
+## Timelapse Photo Application
 
 In this guide, we are going to set up your first instance of a Reactor that you can execute an application in. In this case, the Reactor is going to reside on your laptop.
 

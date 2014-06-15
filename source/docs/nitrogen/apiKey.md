@@ -18,3 +18,15 @@ Find all the api_keys for the authenticated user.
 
 **callback**:  *Function*,  Callback function of the form f(err, permissions).
 
+ApiKey.create(session, callback)
+--------------------------------
+Create an API key.
+
+
+
+**Parameters**
+
+**session**:  *Object*,  An open session with a Nitrogen service.
+
+**callback**:  *Function*,  Callback function of the form f(err, apiKey).
+
