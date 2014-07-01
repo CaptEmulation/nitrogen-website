@@ -32,11 +32,11 @@ Press the 'snapshot' button (remember to smile!), which behind the scenes will s
 }
 ```
 
-We have permission to send this camera device a message because it is using our API key (and therefore we have wildcard permissions for it) so this cameraControl message will be accepted and sent to anyone subscribing to this message stream in real time. Since our camera device application is running and has a subscription, it will receive this message and the cameraManager will take a snapshot with the camera.
+We have permission to send this camera device a message because it is using our API key (and therefore we have all permissions for it) so this cameraControl message will be accepted and sent to anyone subscribing to this message stream in real time. Since our camera device application is running and has a subscription, it will receive this message and the cameraManager will take a snapshot with the camera.
 
 The web admin's command tab shows the currently active commands. In our case, it should show the command briefly, but once the camera has responded to it with an image message, it will disappear, since it is no longer an active command.
 
-This is a common pattern for commandManagers working with devices. We can see this request / response pattern in detail by clicking on the messages tab.  This should contain the cameraCommand followed by the image that was issued in response. I hope that you were smiling when you pressed 'snapshot'. Here's what my Nitrogen selfie looked like:
+This is a common pattern for commandManagers working with devices. We can see this request / response pattern in detail by clicking on the messages tab. This should contain the cameraCommand followed by the image that was issued in response. I hope that you were smiling when you pressed 'snapshot'. Here's what my Nitrogen selfie looked like:
 
 <img src="/images/admin-camera-messages.png" style="max-width:100%" />
 
