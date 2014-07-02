@@ -33,7 +33,7 @@ var camera = new ImageSnapCamera({
 
 This defines the [camera device](/docs/devices/camera.html) that we'd like to use. A device in Nitrogen implements of a set of agreed upon functionality for the commands it is able to execute.
 
-In this case, we are using an implementation of a [camera device](/docs/devices/camera.html) that uses the command line tool `imagesnap` on the Mac to take a picture. If you are using Linux, replace this class with `FSWebcamCamera` and if you are using Windows replace it with `CommandCamCamera`.
+In this case, we are using an implementation of a [camera device](/docs/devices/camera.html) that uses the command line tool `imagesnap` on the Mac to take a picture. If you are using Linux, replace `ImageSnapCamera` with `FSWebcamCamera` and if you are using Windows replace it with `CommandCamCamera`.
 
 The next line connects the camera to the Nitrogen service:
 
@@ -63,9 +63,9 @@ Copy the key and export an environmental variable to your .bash_profile/.bashrc:
 
 `export API_KEY=[YOUR KEY]`
 
-or through the Windows Control Panel:
+on Windows:
 
-`API_KEY=[YOUR KEY]`
+`set API_KEY=[YOUR KEY]`
 
 Adding this api key will automatically associate this device with your account when the device is created the first time.
 
