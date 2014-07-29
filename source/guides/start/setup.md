@@ -8,7 +8,13 @@ This guide will walk you through everything you need to do to get setup and runn
 
 ### Installation
 
-Nitrogen uses node.js extensively. If you don't already have node.js installed, install it from [http://nodejs.org](http://nodejs.org). If you are using Windows, please also install the prereqs in the [Running on Windows](https://github.com/nitrogenjs/service) section of the service project's page.
+Nitrogen uses node.js extensively. If you don't already have node.js installed, install it from [http://nodejs.org](http://nodejs.org).
+
+<b>WINDOWS USERS</b>: You also need to install the prerequisites in the [Running on Windows](https://github.com/nitrogenjs/service) section of the service project's page.
+
+Finally, if you have both Python 2 and 3 installed on your machine, configure npm to point at Python 2 with
+
+`> npm config set python /PATH/TO/PYTHON2 -g`
 
 Then use npm to install Nitrogen's command line tool:
 
@@ -32,4 +38,4 @@ This will create an account for you and store away your credentials with the com
 
 A [security principal in Nitrogen](/docs/concepts/principals.html) is an entity that authenticates with the service and has a set of permissions associated with it. A principal could be a device, user, application, or even the service itself.
 
-You will likely see just one principal at this point, the user you just created, since you haven't added any devices to the service. Let's make it less lonely in your account by [creating our first device](camera.html).
+You will likely see just one principal at this point, the user you just created, since you haven't added any devices to the service. Let's make your account less lonely by [creating our first device](camera.html).

@@ -4,7 +4,7 @@ title: Camera Device with Nitrogen
 
 ## Camera Device
 
-We created an account with the Nitrogen command line tool in the [previous guide](setup.md).  Let's now get our first device connected.
+We created an account with the Nitrogen command line tool in the [previous guide](setup.md). Let's now get our first device connected.
 
 To avoid the complexities around actual hardware for the moment, we're going to build a device around something that we all have: a camera on our laptop.
 
@@ -20,7 +20,7 @@ The camera project you just cloned is an example of what a standalone device app
 var service = new nitrogen.Service(config);
 ```
 
-The first thing we do is define the service that we want our device to connect to.  A [service](/docs/concepts/service.html) in Nitrogen connects authenticated [principals](/docs/concepts/principals.html) (devices, users, applications, etc.) together over [messaging](/docs/concepts/messages.html) where the access and visibility is controlled by the [permissions](/docs/concepts/permissions.html) you have defined for each principal. You don't need to understand the all of the details of that sentence for this guide -- but there is more detail in these links when you want to.
+The first thing we do is define the service that we want our device to connect to.  A [service](/docs/concepts/service.html) in Nitrogen connects authenticated [principals](/docs/concepts/principals.html) (devices, users, applications, etc.) together over [messaging](/docs/concepts/messages.html) where the access and visibility of any principal is controlled by the [permissions](/docs/concepts/permissions.html) you have defined for each principal. You don't need to understand the all of the details of that sentence for this guide -- but there is more detail in these links when you want to.
 
 ```javascript
 
@@ -41,7 +41,7 @@ The next line connects the camera to the Nitrogen service:
 service.connect(camera, function(err, session, camera) {
 ```
 
-This is the key line of code.  In one line of code we have provisioned and authenticated the device with the service and established a session that we can communicate securely over.
+This is the key line of code.  In one line of code we have provisioned and authenticated our camera device with the service and established a session that we can communicate securely over.
 
 The next block of code sets up a CameraManager to watch the camera's message stream and execute snapshot commands:
 

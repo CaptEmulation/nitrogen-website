@@ -10,7 +10,11 @@ Just like you did on the Raspberry Pi in the previous guide step, move to a deve
 
 `git clone https://github.com/nitrogenjs/reactor reactor`
 
-Navigate into the reactor directory. Edit the config.js to name the reactor 'Laptop Reactor' so you can differentiate it from the previous one on your Raspberry Pi, add your API key to apiKey.js, and start the reactor:
+Navigate into the reactor directory. Edit the config.js to name the reactor 'Laptop Reactor' so you can differentiate it from the previous one on your Raspberry Pi.
+
+If you haven't already, set the environmental variable API_KEY to your api key (you can find this under API Keys) in
+
+Start the reactor:
 
 `node server.js`
 
@@ -26,7 +30,7 @@ And install the application to the Reactor that will execute as this application
 
 `> n2 reactor install 'Laptop Reactor' timelapse --executeAs 'Timelapse App'`
 
-The timelapse application takes 20 evenly distributed shots during the daylight hours using a camera. To do that, it needs a camera id and the latitude/longitude of the camera at startup. Let's get the camera ID using the following command:
+The timelapse application takes a photo every 15 minutes during the daylight hours using a camera. To do that, it needs a camera id and the latitude/longitude of the camera at startup. Let's get the camera ID using the following command:
 
 `> n2 device ls`
 
@@ -36,3 +40,5 @@ Look up your latitude / longitude using your favorite search engine (remember th
 `     latitude: "36.9720", longitude: "-122.0263", only_daytime: true}'`
 
 This will start the application, compute the sunrise and sunset times using the excellent npm module `suncalc` and then send uniformly distributed [cameraCommands](/docs/schemas/cameraCommand.html) to the camera during the daytime to take photos.
+
+With that you have run your first application that controls a Nitrogen device.  Continue on to [the next guide](/guides/apps/web.html) see how you can write a web application that uses the output of your Nitrogen devices.

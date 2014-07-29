@@ -63,7 +63,7 @@ service.connect(app, function(err, session, app) {
 });
 ```
 
-Like the examples that we have seen in the previous guides, it first establishes a session with the service. Once that session is established, it then searches for devices that are have the tag 'sends:image'. In Nitrogen, if a device sends a particular type of message, tagging it with 'sends:<message type>' enables other principals to query for it. In this case, we are using this tag to find all of the cameras. For each of these devices that it finds, it finds the last image it sent, and sends the image to any clients.
+Like the examples that we have seen in the previous guides, it first establishes a session with the service. Once that session is established, it then searches for devices that are have the tag 'sends:image'. In Nitrogen, if a device sends a particular type of message, tagging it with 'sends:<message type>' enables other principals to query for it. In this case, we will use this tag to find all of your cameras. For each of these devices that it finds, it finds the last image it sent, and sends the image to any clients.
 
 Mosaic updates its web clients over socket.io. We next open up a real time subscription on any sent images from the cameras the application has permissions for and fans these messages out to each connected client via the sendImage function.
 

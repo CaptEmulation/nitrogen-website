@@ -1,10 +1,10 @@
 ---
-title: Nitrogen web admin
+title: Nitrogen Web Admin
 ---
 
 ## Nitrogen Web Admin
 
-You can manage your devices, applications, and users with Nitrogen using either the command line tool or the web admin.  In this section, we're going to use the web admin to control the camera we just connected to the service.
+You can manage your devices, applications, and users with Nitrogen using either the command line tool or the web admin. In this section, we're going to use the web admin to control the camera we just connected to the service.
 
 You can reach the web admin by clicking the link in the upper right corner of this page or by navigating to [https://admin.nitrogen.io](https://admin.nitrogen.io).
 
@@ -40,7 +40,7 @@ This is a common pattern for commandManagers working with devices. We can see th
 
 <img src="/images/admin-camera-messages.png" style="max-width:100%" />
 
-In the real world, devices can live in very unaccessible locations where it might be impossible (and probably inconvenient) to connect to them to watch their log output. The Nitrogen client provides automatic transport for logs from the device to the service. These are just messages like any other message and you can see them in the logs tab in the web admin. This enables you to remotely diagnose any issues for a device by clicking on the 'Logs' tab in this view. Finally, you can see who has permissions for any principal by clicking on its "Permissions" tab.
+In the real world, devices can live in very unaccessible locations where it might be impossible (and probably inconvenient) to connect to them to watch their log output. The Nitrogen client automatically transports logs from the device to the service. These are just messages like any other message and you can see them in the logs tab in the web admin. This enables you to remotely diagnose any issues for a device by clicking on the 'Logs' tab in this view. Finally, you can see who has permissions for any principal by clicking on its "Permissions" tab.
 
 And that's it. We've successfully built a device, hooked it up to a Nitrogen service, and controlled it remotely. We could have done this anywhere in the world, on any network, and the Nitrogen service would have routed these messages back to our camera. And all of the potentially sensitive data this camera is collecting is only accessible to you because of the permissions that the Nitrogen service enforces.
 

@@ -4,27 +4,26 @@ title: Nitrogen Reactor
 
 ## Device Applications
 
-As you've seen in the previous two guides, there were a lot of repeated steps in setting up the typical device application. In this guide, we'll see how we can automate 
-all of these steps while at the same time being able to remotely manage our devices using the [Nitrogen Reactor](/docs/concepts/reactor.md).
+As you've seen in the previous two guides, there were a lot of repeated steps in setting up the typical device application. In this guide, we'll see how we can automate all of these steps while at the same time being able to remotely manage our devices using the [Nitrogen Reactor](/docs/concepts/reactor.md).
 
 The [Reactor](/docs/concepts/reactor.md) is Nitrogen's application execution environment. Applications in Nitrogen are written in JavaScript, are passed a session and parameters at startup, and implement <b>start</b> and <b>stop</b> methods. The [Reactor](/docs/concepts/reactor.md) manages the execution of these modules based on command messages that are sent to it. This allows us to install, start, stop, and uninstall applications to it without having to have network or shell access to the device.
 
-For the Raspberry Pi, the Nitrogen project mantains prebuilt versions of the Raspbian distribution with the Reactor preinstalled. You can download this image from the [web admin](https://admin.nitrogen.io) under the API Keys top navigation item. The image you download will also automatically be personalized with your API key so no configuration of this image is needed.
+For the Raspberry Pi, the Nitrogen project mantains prebuilt versions of the Raspbian distribution with the Reactor preinstalled. You can download this image from the [web admin](https://admin.nitrogen.io/#/apikeys) under the API Keys. The image you download will also automatically be personalized with your API key so no configuration of this image is needed.
 
 Once you have the image, shutdown the Raspberry Pi if necessary and remove the SD card.  Insert this SD card into your computer and flash this image to your SD card with the method appropriate for your operating system:
 
 #### Windows:
   + Install [Win32DiskImager](http://sourceforge.net/projects/win32diskimager/) and use its GUI to burn the image to the SD card.
 
-#### MacOS: 
+#### MacOS:
   + sudo diskutil list (note the disk number for your flash drive in the listing that follows the form /dev/rdiskX)
-  + sudo diskutil unmountDisk /dev/rdiskX 
+  + sudo diskutil unmountDisk /dev/rdiskX
   + sudo dd bs=128m if=raspbian-xxxxxxxxxxxxxxx.img of=/dev/rdiskX`
 
 #### Linux:
   + [Follow these instructions](http://xmodulo.com/2013/11/write-raspberry-pi-image-sd-card.html)
 
-With the SD card flashed, put the SD card back into the Raspberry Pi, connect it to ethernet and power it on. The Raspberry Pi will boot and automatically provision itself with the Nitrogen service. It will appear as a reactor principal type, which means that it can receive and execute Nitrogen applications.
+With the SD card flashed, put the SD card back into the Raspberry Pi, connect it to Ethernet and power it on. The Raspberry Pi will boot and automatically provision itself with the Nitrogen service. It will appear as a reactor principal type, which means that it can execute Nitrogen applications.
 
 Now that we have the reactor instance running on the Raspberry Pi, we can deploy applications to it. Let's deploy the <b>fswebcam-app</b> application to it that can take photos.
 
