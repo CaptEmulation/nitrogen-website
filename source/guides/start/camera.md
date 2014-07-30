@@ -51,7 +51,7 @@ switch (process.platform){
 
 This defines the [camera device](/docs/devices/camera.html) that we'd like to use. A device in Nitrogen implements of a set of agreed upon functionality for the commands it is able to execute.
 
-The module will check the platform and use the appropiate implementation of a [camera device](/docs/devices/camera.html). Under OSX it will be the command line tool `imagesnap`, if you are using Linux it will be `FSWebcamCamera` and if you are using Windows it will be `CommandCamCamera`. If you are running on a different platform you can modify the `default` case and if you want to force a specific module you can modify the appropiate case.
+The module will check the platform and use the appropiate implementation of a [camera device](/docs/devices/camera.html). Under OSX it will use `ImageSnapCamera`, with Linux it will be `FSWebcamCamera`, and under Windows it will be `CommandCamCamera`.
 
 The next line connects the camera to the Nitrogen service:
 
@@ -69,7 +69,7 @@ new CameraManager(camera).start(session, function(err, message) {
 });
 ```
 
-In Nitrogen, users, devices, and applications communicate with each other over messaging. There is a class of messages called [commands](/docs/concepts/commands.html) that control the operation of a device. Principals, if they have the permission to do so, can send messages to devices to ask that a particular operation is performed. Devices watch their stream of messages, take appropriate action(s) in response to commands, and send messages in response.
+In Nitrogen, users, devices, and applications communicate with each other over messaging. There is a class of messages called [commands](/docs/concepts/commands.html) that control the operation of a device. Principals, if they have the permission to do so, can send messages to devices to ask that an operation is performed. Devices watch their stream of messages, take appropriate action(s) in response to commands, and send messages in response.
 
 Because watching these message streams is a common operation, the client library defines a [commandManager](/docs/nitrogen/commandManager.html) class that provides the base functionality that can you can extend. For this device, we are using the [CameraManager](/docs/managers/cameraManager.html) subclass that knows how to control the camera device given a message stream that contains cameraCommands. Behind the scenes, the [CameraManager](/docs/managers/cameraManager.html) opens a message subscription to receive these messages in real time.
 
