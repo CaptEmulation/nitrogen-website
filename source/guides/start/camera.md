@@ -20,7 +20,7 @@ The camera project you just cloned is an example of what a standalone device app
 var service = new nitrogen.Service(config);
 ```
 
-The first thing we do is define the service that we want our device to connect to.  A [service](/docs/concepts/service.html) in Nitrogen connects authenticated [principals](/docs/concepts/principals.html) (devices, users, applications, etc.) together over [messaging](/docs/concepts/messages.html) where the access and visibility of any principal is controlled by the [permissions](/docs/concepts/permissions.html) you have defined for each principal. You don't need to understand the all of the details of that sentence for this guide -- but there is more detail in these links when you want to.
+The first thing we do is define the service that we want our device to connect to. A [service](/docs/concepts/service.html) in Nitrogen connects authenticated [principals](/docs/concepts/principals.html) (devices, users, applications, etc.) together over [messaging](/docs/concepts/messages.html) where access to and visibility of any principal is controlled by the [permissions](/docs/concepts/permissions.html) you have defined for each principal. You don't need to understand the all of the details of that sentence for this guide -- but there is more detail in these links when you want to.
 
 ```javascript
 
@@ -59,7 +59,7 @@ The next line connects the camera to the Nitrogen service:
 service.connect(camera, function(err, session, camera) {
 ```
 
-This is the key line of code.  In one line of code we have provisioned and authenticated our camera device with the service and established a session that we can communicate securely over.
+This is a key line of code:  with this we have provisioned and authenticated our camera device with the service and established a session that we can communicate securely over.
 
 The next block of code sets up a CameraManager to watch the camera's message stream and execute snapshot commands:
 
@@ -77,15 +77,15 @@ We need to make one modification to the project before we can connect our camera
 
 `> n2 apikeys ls`
 
-Copy the key and export an environmental variable to your .bash_profile/.bashrc:
+On MacOS or Linux, copy the key and export an environmental variable within your to your .bash_profile/.bashrc:
 
 `export API_KEY=[YOUR KEY]`
 
-on Windows:
+under Windows add a API_KEY variable to your environmental variables or temporarily on the command line:
 
 `set API_KEY=[YOUR KEY]`
 
-Adding this api key will automatically associate this device with your account when the device is created the first time.
+This api key automatically associates new devices with your account when the device is created the first time.
 
 ### Start 'er up
 

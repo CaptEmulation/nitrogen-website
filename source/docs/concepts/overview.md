@@ -4,7 +4,7 @@ title: Nitrogen Overview
 
 ## Overview
 
-Nitrogen is a platform for connecting together devices into applications.  It provides the device management, security and permissioning scheme, and application platform so that you can focus on building your application and not the infrastructure that surrounds it.
+Nitrogen connects devices together into applications. It provides the device management, security and permissioning, and application platform so that you can focus on building your application and not the infrastructure that surrounds it.
 
 ### Messaging Based
 
@@ -22,7 +22,7 @@ At the same time, security is difficult to implement and even harder to get righ
 
 ### Application Environment
 
-Finally, Nitrogen provides an application environment called [Reactor](reactor.html) that hosts and manages the lifecycle of applications that tie together devices. Applications in Nitrogen are written as node.js modules so that they can leverage the broad JavaScript developer base, the rich node.js package ecosystem, and the ability to publish and update them easily.
+Finally, Nitrogen provides an application environment called [Reactor](reactor.html) that hosts and manages the lifecycle of applications that tie together devices. Applications in Nitrogen are node.js modules that can leverage the broad JavaScript developer base, the rich node.js package ecosystem, and the ability to publish and update them easily.
 
 Applications in Nitrogen primarily work with the Nitrogen service with a [JavaScript client library](/docs/nitrogen/index.html).
 

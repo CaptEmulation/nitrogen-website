@@ -11,7 +11,7 @@ A service is a principal and messaging hub in Nitrogen. It authenticates and aut
 var config = {
   host: 'api.nitrogen.io',
   http_port: 443,
-  protocol: 'https'  
+  protocol: 'https'
 };
 
 var service = new nitrogen.Service(config);
@@ -35,4 +35,4 @@ nitrogen.Message.find(session, { to: camera.id }, function(err, messages) {
 });
 ```
 
-The service can automatically renew a session as it nears the end of the AccessToken's lifetime. This renewal is automatically handled for you by the Session class of the client library.
+The service automatically renews a session as it nears the end of the current session's lifetime. This renewal is automatically handled for you by the [Session class](/docs/nitrogen/session.html) of the client library.

@@ -4,7 +4,7 @@ title: Nitrogen Reactor
 
 # Reactor
 
-The Reactor is the application execution environment for Nitrogen. It manages the complete lifecycle of an application: installing, establishing a security context, starting, stopping, upgrades, and uninstalling. Each application in a reactor executes in its own node.js process, and within that process, within an isolated virtual machine where it only has access to its package dependencies in an isolated filesystem.  This isolated container is called an instance in Nitrogen.
+The Reactor is the Nitrogen application execution environment. It manages the complete lifecycle of an application: installing, establishing a security context, starting, stopping, upgrades, and uninstalling. Each application in a reactor executes in its own node.js process, and within that process, within an isolated container called an instance.
 
 Reactor applications are just npm modules that expose an object that accepts a session and params object in its constructor and exposes two methods: start and stop. The canonical Hello World application would look like this in Nitrogen:
 

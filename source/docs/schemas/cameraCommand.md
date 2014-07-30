@@ -1,6 +1,6 @@
 # cameraCommand
 
-<b>cameraCommand</b> messages contain a camera control command that the camera referenced in the to: field should execute at the specified timestamp. 
+<b>cameraCommand</b> messages contain a camera control command that the camera referenced in the to: field should execute at the specified timestamp.
 
 ## Implementation
 

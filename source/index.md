@@ -15,30 +15,30 @@ title: A platform for connecting devices and applications.
 
 <div class="row" style="margin-top: 20px">
     <div class="col-md-4">
-        <h3>Application Platform</h3>
+        <h3>Manage devices</h3>
         <p style="font-size: 120%">
-            Build applications with a common cloud and device application model based on JavaScript.
+            Provision, monitor, install applications, control, and send / receive data over reliable messaging.
         </p>
     </div>
 
     <div class="col-md-4">
-        <h3>Manage devices</h3>
+        <h3>Application Platform</h3>
         <p style="font-size: 120%">
-            Automatic provisioning, operational monitoring, remotely install applications, and control and receive data from them using messaging. 
+            Build applications with a common cloud and device application model centered on JavaScript.
         </p>
     </div>
 
     <div class="col-md-4">
         <h3>Secure</h3>
         <p style="font-size: 120%">
-            Nitrogen's built-in authentication and authorization system keeps your devices, users, and data safe.
+            Nitrogen's authentication and authorization system keeps your devices, users, and data safe.
         </p>
     </div>
 </div>
 
 <h3>Applications</h3>
 <p style="font-size: 120%">
-   Controlling a heater based on the measurements of four thermostats looks like this in a Nitrogen application:
+   Turning on a heater based on the measurements of four thermometers looks like this in a Nitrogen application:
 </p>
 
 ```javascript
@@ -51,7 +51,7 @@ session.onMessage({ type: 'temperature' }, function(message) {
 
     var avg = avgTemperature(temperatures);
 
-    if (avg && avg < SETPOINT) {
+    if (avg < SETPOINT) {
         lastCommand = new nitrogen.Message({
             type: 'switchCommand',
             to: heater.id,
@@ -65,7 +65,7 @@ session.onMessage({ type: 'temperature' }, function(message) {
 ```
 
 <p style="font-size: 120%">
-    Making an application installable on a device is as simple as using node.js package manager to publish it:
+    Making an application installable on a device is as simple as using node.js's package manager to publish it:
 </p>
 
 ```javascript
@@ -73,7 +73,7 @@ session.onMessage({ type: 'temperature' }, function(message) {
 ```
 
 <p style="font-size: 120%">
-    and installing it on a device is then just:
+    and installing it on a device is as simple as:
 </p>
 
 ```javascript

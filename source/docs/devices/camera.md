@@ -15,12 +15,13 @@ A camera device implements the following interface:
     * <b>callback</b>(err, options): Callback with any error and the options used during the shot.
 
 * <b>status</b>(callback): Return the status of the camera device. Called before heartbeat operations on the device.
-    * <b>callback</b>(error, status): 
+    * <b>callback</b>(error, status):
         * error: True if there is an error with the camera device.
-        * status: A free form object with the current status of the camera device. 
+        * status: A free form object with the current status of the camera device.
 
 ## Implementations
 
+* [commandcam](https://github.com/nitrogenjs/devices/tree/master/commandCam)
 * [raspberrypi-camera](https://github.com/nitrogenjs/devices/tree/master/raspberrypi-camera)
 * [nitrogen-imagesnap](https://github.com/nitrogenjs/devices/tree/master/imagesnap)
 * [fswebcam](https://github.com/nitrogenjs/devices/tree/master/fswebcam)

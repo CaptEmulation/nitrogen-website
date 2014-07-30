@@ -1,6 +1,6 @@
 # CameraManager
 
-CameraManager is a [CommandManager](../concepts/commands.html) subclass that follows the message stream of a [camera](../devices/camera.html) device, executes [cameraCommands](../schemas/cameraCommand.html) as necessary against that [camera](../devices/camera.html) and emits [images](../schemas/image.html) messages.
+CameraManager is a [CommandManager](../concepts/commands.html) subclass that follows the message stream of a [camera](../devices/camera.html) device, executes [cameraCommands](../schemas/cameraCommand.html) against that [camera](../devices/camera.html) and emits [images](../schemas/image.html) messages.
 
 ## Implementation
 
@@ -21,7 +21,7 @@ var camera = new RaspberryPiCamera();
 service.connect(camera, function(err, session, camera) {
 
     new CameraManager(camera).start(session, function(err, message) {
-        // callback each time a relevant message is received. 
+        // callback each time a relevant message is received.
     });
 });
 ```

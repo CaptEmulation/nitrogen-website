@@ -4,9 +4,9 @@ title: Nitrogen Permissions
 
 # Permissions
 
-A permission in Nitrogen describes actions that principal(s) can or cannot take on principal(s). The service uses permissions to determine if a particular action is authorized for a particular security principal.
- 
-## Properties 
+A permission in Nitrogen describes the actions that principal(s) can or cannot take on principal(s). The service uses permissions to determine if a particular action is authorized for a particular security principal.
+
+## Properties
 
 * <b>issued\_to</b>: The principal id that this permission is granted to. If missing, this permission applies to all principals.
 
@@ -30,4 +30,4 @@ A permission in Nitrogen describes actions that principal(s) can or cannot take 
 
 ## Evaluation Order
 
-Active permissions for a principal are examined in priority order and the first match is used to determine if the action is authorized. Lower numbers are higher priority. 
+Active permissions for a principal are examined in priority order and the first match is used to determine if the action is authorized. Lower numbers are higher priority.
