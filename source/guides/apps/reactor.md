@@ -33,6 +33,8 @@ We want to run this device application in the security context of a camera devic
 
 We then install the application to the reactor, passing it the name of this principal and asking it to execute the application under this principal:
 
+(<b>NOTE:</b> If you'd like to use your onboard Raspberry Pi camera instead of a USB camera, substitute 'rpi-camera' for 'fswebcam-app' below.)
+
 `> n2 reactor install 'Reactor' fswebcam-app --executeAs 'Camera'`
 
 This will install the <b>fswebcam-app</b> module into its own container within this Nitrogen reactor from node.js's npm package registry. You can watch the status in the console logs or via the state command:
