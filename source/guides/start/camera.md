@@ -24,16 +24,34 @@ The first thing we do is define the service that we want our device to connect t
 
 ```javascript
 
-var camera = new ImageSnapCamera({
+var cameraConfig =  {
+    api_key: config.api_key,
     nickname: 'camera',
-    name: "My Computer's Camera"
-});
+    name: "Camera"
+};
+
+var camera;
+switch (process.platform){
+    case "darwin":
+        camera = new ImageSnapCamera(cameraConfig);
+        break;
+    case "linux":
+        camera = new FSWebcamCamera(cameraConfig);
+        break;
+    case "win32":
+        camera = new CommandCamCamera(cameraConfig);
+        break;
+    default:
+        console.log('Unknown platform, falling back to ImageSnapCamare');
+        camera = new ImageSnapCamera(cameraConfig);
+        break;
+}
 
 ```
 
 This defines the [camera device](/docs/devices/camera.html) that we'd like to use. A device in Nitrogen implements of a set of agreed upon functionality for the commands it is able to execute.
 
-In this case, we are using an implementation of a [camera device](/docs/devices/camera.html) that uses the command line tool `imagesnap` on the Mac to take a picture. If you are using Linux, replace `ImageSnapCamera` with `FSWebcamCamera` and if you are using Windows replace it with `CommandCamCamera`.
+The module will check the platform and use the appropiate implementation of a [camera device](/docs/devices/camera.html). Under OSX it will be the command line tool `imagesnap`, if you are using Linux it will be `FSWebcamCamera` and if you are using Windows it will be `CommandCamCamera`. If you are running on a different platform you can modify the `default` case and if you want to force a specific module you can modify the appropiate case.
 
 The next line connects the camera to the Nitrogen service:
 
