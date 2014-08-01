@@ -4,7 +4,7 @@ title: Camera Device with Nitrogen
 
 ## Camera Device
 
-We created an account with the Nitrogen command line tool in the [previous guide](setup.md). Let's now get our first device connected.
+We created an account with the Nitrogen command line tool in the [previous guide](setup.html). Let's now get our first device connected.
 
 To avoid the complexities around actual hardware for the moment, we're going to build a device around something that we all have: a camera on our laptop.
 
