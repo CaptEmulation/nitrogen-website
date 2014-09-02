@@ -12,7 +12,7 @@ Find messages filtered by the passed query and limited to and sorted by the pass
 
 **session**:  *Object*,  The session with a Nitrogen service to make this request under.
 
-**query**:  *Object*,  A query filter for the messages you want to find defined using MongoDB query format.
+**query**:  *Object*,  A query filter for the messages you want to find defined using MongoDB query format. This query must include an indexed field on the Nitrogen service for this session or the request will be rejected by the service.
 
 **options**:  *Object*,  Options for the query:  'limit': maximum number of results to be returned. 'sort': The field that the results should be sorted on, 'dir': The direction that the results  should be sorted. 'skip': The number of results that should be skipped before pulling results.
 
