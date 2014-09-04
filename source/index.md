@@ -37,8 +37,9 @@ title: A platform for connecting devices and applications.
 </div>
 
 <h3>Applications</h3>
+
 <p style="font-size: 120%">
-   Turning on a heater based on the measurements of four thermometers looks like this in a Nitrogen application:
+   An application that controls a heater using the measurements of four thermometers looks like this:
 </p>
 
 ```javascript
