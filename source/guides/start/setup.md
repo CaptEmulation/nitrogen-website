@@ -22,9 +22,19 @@ nitrogen-cli is no fun to type, so the command line tool uses the alias `n2`.  L
 
 This will display the top level set of commands that are available from the command line.
 
+### Checking the service
+
+Before we create a user, let's make sure that we are connected to the correct server with the command line tool. 
+
+`> n2 service show` 
+
+This will show you which service you are connected to currently. By default this is "host: api.nitrogen.io". If you want to change it, use the n2 command to 'set' individual properties or 'use' a seperate service profile all together.
+
+`> n2 service help` for more details 
+
 ### Account Creation
 
-With the command line tool installed, let's create a user account with the hosted Nitrogen service:
+Now, let's create a user account with the hosted Nitrogen service:
 
 `> n2 user create`
 
