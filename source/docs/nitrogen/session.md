@@ -96,3 +96,15 @@ Syntax sugar to setup a message subscription.
 
 **callback**:  *Function*,  Callback function with signature f(messageReceived).
 
+Session.onMessage(filter, callback)
+-----------------------------------
+Syntax sugar to setup a principal subscription.
+
+
+
+**Parameters**
+
+**filter**:  *Object*,  The filter to apply to the objects returned from this subscription.  For example { from: '51f2735fda5fcca439000001' } will restrict messages received to only those from this particular principal id.
+
+**callback**:  *Function*,  Callback function with signature f(messageReceived).
+
