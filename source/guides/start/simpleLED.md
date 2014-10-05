@@ -173,7 +173,7 @@ At this point you have a device that is authenticated and send telemetry data up
 
 ### Receiving commands.
 
-The next thing to do is to start receiving commands from the server. The way that Nitrogen does this is with a CommandManager. This is slightly more complicated that the device but not tremendously. It's a prototyped object based on teh nitrogen.CommandManager.prototype.
+The next thing to do is to start receiving commands from the server. The way that Nitrogen does this is with a CommandManager. This is slightly more complicated that the device but not tremendously. It's a prototyped object based on the nitrogen.CommandManager.prototype.
 
 Let's create that first. Between where you created your device and where you called the service.connect, add the following code.
 
@@ -209,7 +209,7 @@ simpleLEDManager.prototype.isCommand = function(message) {
 };
 ```
 
-The next method is a little trickier. Messages that you have already processed or are no longer interesting to you, such as something that expired, can be filterd out in the "obsoletes" method. It's important to do this correctly or you will keep getting the same queue of messages over and over.
+The next method is a little trickier. Messages that you have already processed or are no longer interesting to you, such as something that expired, can be filtered out in the "obsoletes" method. It's important to do this correctly or you will keep getting the same queue of messages over and over.
 
 If you return true, the upstreamMsg will be expired. If you return false, it will be added to the queue to get executed next. You always want to make sure that the base CommandManager has a crack at these first as that will manage things such as expired messages and such for you.
 
