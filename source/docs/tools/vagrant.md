@@ -38,5 +38,5 @@ For Parallels
 # Install the Parallels plugin 
 > vagrant plugin install vagrant-parallels
 # create the vm
-> vagrant up --provider azure --provision
+> vagrant up --provider parallels --provision
 ```
