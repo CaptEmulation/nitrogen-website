@@ -178,12 +178,12 @@ The next thing to do is to start receiving commands from the server. The way tha
 Let's create that first. Between where you created your device and where you called the service.connect, add the following code.
 
 ```
-function simpleLEDManager() {
+function SimpleLEDManager() {
     nitrogen.CommandManager.apply(this, arguments);
 }
 
-simpleLEDManager.prototype = Object.create(nitrogen.CommandManager.prototype);
-simpleLEDManager.prototype.constructor = simpleLEDManager;
+SimpleLEDManager.prototype = Object.create(nitrogen.CommandManager.prototype);
+SimpleLEDManager.prototype.constructor = SimpleLEDManager;
 ```
 
 At this point you have a CommandManager but it's not very useful.
@@ -204,7 +204,7 @@ SimpleLEDManager.prototype.isRelevant = function(message) {
 The next one is to see if it's actually a command that you're going to execute on. It could be a log message or a command that you don't actually know how to execute.
 
 ```
-simpleLEDManager.prototype.isCommand = function(message) {
+SimpleLEDManager.prototype.isCommand = function(message) {
     return message.is('_lightOn');
 };
 ```
@@ -294,7 +294,7 @@ The only code left to write is to alter the service.connect to start our new Com
 service.connect(simpleLED, function(err, session, simpleLED) {
     if (err) return console.log('failed to connect simpleLED: ' + err);
 
-    new simpleLEDManager(simpleLED).start(session, function(err, message) {
+    new SimpleLEDManager(simpleLED).start(session, function(err, message) {
         if (err) return session.log.error(JSON.stringify(err));
     });
 
