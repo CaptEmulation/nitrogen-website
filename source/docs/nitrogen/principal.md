@@ -16,6 +16,20 @@ public key auth will be used.
 
 **callback**:  *Function*,  Callback function of the form f(err, principal, accessToken).
 
+Principal.accessTokenFor(session, options, callback)
+----------------------------------------------------
+Fetch an accessToken for the passed principal.
+
+
+
+**Parameters**
+
+**session**:  *Object*,  The session with a Nitrogen service to make this request under.
+
+**options**:  *Object*,  Options for the access token: 'expires': the date this access token should expire.
+
+**callback**:  *Function*,  Callback function of the form f(err, messages).
+
 Principal.create(config, callback)
 ----------------------------------
 Create a new principal with the service.  For user principal types, this principal must have a email, password, and
