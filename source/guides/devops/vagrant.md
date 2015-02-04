@@ -40,3 +40,5 @@ For Parallels
 # create the vm
 > vagrant up --provider parallels --provision
 ```
+
+This takes a while. A while depends on your machine speed, network connection and the like but expect to go get a cup of coffee while this is running. 

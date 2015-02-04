@@ -23,7 +23,7 @@ There are three possible places to get started depending on what you want to do 
 
 <div class="row" style="margin-top: 20px">
     <div class="col-md-4">
-        <h3><a href="./guides/devices">Device side development</a></h3>
+        <h3><a href="./guides/device/index.html">Device side development</a></h3>
         <p>
             Connect devices over a variety of protocols including REST and MQTT to Nitrogen or run the Node.js agent. 
         </p>
