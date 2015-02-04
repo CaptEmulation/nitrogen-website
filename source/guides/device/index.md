@@ -1,5 +1,5 @@
 ---
-Device Side Development
+title: Device Side Development
 ---
 
 ## Device Side Development
@@ -10,7 +10,7 @@ The recommendation is that you get started with a virtual device that you can ru
 
 ## Virtual Devices
 
-The first device to get started with is a virtual device. Find more information about that at [writing your first device](../guides/start/simpleLED.html). 
+The first device to get started with is a virtual device. Find more information about that at [writing your first device](simpleLED.html). 
 
 ## Raspberry PI
 
@@ -20,6 +20,8 @@ An incredibly popular maker device is the Raspberry PI. This is one of the easie
 
 A relativity new device is the Arduino Yun. It's got both a traditional Amtel chipset like the Arduino Due as well as a Linux system on a chip. It also has WiFi and Ethernet so you don't need an additional shield to connect to the network. 
 
+The easiest way to work with the Yun and Nitrogen is through [Johnny-Five](http://node-ardx.org/). There's a whole set of labs on how to do this at [N2 Labs](http://github.com/joshholmes.com/n2labs).  
+
 ## Tessel
 
 The Tessel is an interesting device that runs Lua which is a compiled form of JavaScript. As a result, we can use the MQTT gateway and the Node.js MQTT library. 
@@ -28,4 +30,4 @@ Please check out the [Tessel 2 Nitrogen lab](https://github.com/joshholmes/tesse
 
 ## Other devices
 
-If you're not using one of the devices that we have listed here, you can use 
+If you're not using one of the devices that we have listed here, we'd love to hear from you and help you get up and running. 

@@ -1,5 +1,5 @@
 ---
-Deploying with Docker
+title: Deploying with Docker
 ---
 
 ## Deploying with Docker

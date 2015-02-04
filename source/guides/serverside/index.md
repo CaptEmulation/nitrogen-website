@@ -22,20 +22,18 @@ The core Nitrogen architecture is divided into 4 services including:
 Each of these services rely on various parts of the Nitrogen core and other services. 
 
 
-Main main projects
-[frontdoor](http://github.com/nitrogenjs/frontdoor): Service front end for Nitrogen
-[ingest](http://github.com/nitrogenjs/ingest): Ingest services for Nitrogen
-[registry](http://github.com/nitrogenjs/registry): Registry services for Nitrogen
-[consumption](http://github.com/nitrogenjs/consumption): Egress services for Nitrogen
-<li><a href="https://github.com/nitrogenjs/admin">admin</a>: Web admin tool for working with the Nitrogen service.
-</ol>
+Main main projects: 
+
+1. [frontdoor](http://github.com/nitrogenjs/frontdoor): Service front end for Nitrogen
+2. [ingest](http://github.com/nitrogenjs/ingest): Ingest services for Nitrogen
+3. [registry](http://github.com/nitrogenjs/registry): Registry services for Nitrogen
+4. [consumption](http://github.com/nitrogenjs/consumption): Egress services for Nitrogen
+5. [admin](https://github.com/nitrogenjs/admin): Web admin tool for working with the Nitrogen service.
 
 Helpers
-<ol>
-<li><a href="https://github.com/nitrogenjs/service">service</a>: Core platform responsible for managing principals, security, and messaging.</li>
-<li><a href="https://github.com/nitrogenjs/devices">devices</a>: Device principals for common pieces of hardware.</li>
-<li><a href="https://github.com/nitrogenjs/commands">commands</a>: CommandManagers and schemas for well known command types.</li>
-<li><a href="https://github.com/nitrogenjs/reactor">reactor</a>: Always-on hosted application execution platform.</li>
-<li><a href="https://github.com/nitrogenjs/apps">apps</a>: Project maintained Nitrogen applications.</li>
-</ol>
-</div>
+
+1. [service](https://github.com/nitrogenjs/service): Core platform responsible for managing principals, security, and messaging.
+2. [devices](https://github.com/nitrogenjs/devices): Device principals for common pieces of hardware.
+3. [commands](https://github.com/nitrogenjs/commands): CommandManagers and schemas for well known command types.
+4. [reactor](https://github.com/nitrogenjs/reactor): Always-on hosted application execution platform.
+5. [apps](https://github.com/nitrogenjs/apps): Project maintained Nitrogen applications.
