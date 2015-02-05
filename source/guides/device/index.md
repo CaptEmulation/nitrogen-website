@@ -14,7 +14,12 @@ The first device to get started with is a virtual device. Find more information 
 
 ## Raspberry PI
 
-An incredibly popular maker device is the Raspberry PI. This is one of the easiest devices to get started with because the Nitrogen Web Admin can actually create a Raspian image that you can copy directly on an SD card and start your device up. 
+An incredibly popular maker device is the Raspberry PI. This is one of the easiest devices to get started with because the Nitrogen Web Admin can actually create a Raspian image that you can copy directly on an SD card and start your device up. Once you create an account on [http://nitrogen.io](http://nitrogen.io) or on your own local server, go to the [Web Admin API Keys page](https://admin.nitrogen.io/#/apikeys) and look for the Raspian image that has your API Key ready to go. 
+
+There are also some apps ready to go for the Raspberry Pi including a remotely controlled web cam. 
+
+Start at [Raspberry Setup](raspberrysetup.html) to get your Pi ready for Nitrogen development with Node.js. 
+Then look at the [Camera lab](camera.html) that shows you how to get the camera up and running on your Pi. 
 
 ## Arduino Yun
 
