@@ -8,6 +8,10 @@ To connect a device to Nitrogen, you can use either Rest or MQTT. There are othe
 
 The recommendation is that you get started with a virtual device that you can run on your local machine and then move on to physical devices. 
 
+## Setup
+
+Before getting started, please run through the [setup of the admin tools](../start/setup.html). 
+
 ## Virtual Devices
 
 The first device to get started with is a virtual device. Find more information about that at [writing your first device](simpleLED.html). 
