@@ -37,7 +37,7 @@ There are three possible places to get started depending on what you want to do 
     </div>
 
     <div class="col-md-4">
-        <h3><a href="./guide/serverside">Server side development</a></h3>
+        <h3><a href="./guides/serverside/index.html">Server side development</a></h3>
         <p>
             Build applications with a common cloud and device application model centered on JavaScript.
             <uL>
