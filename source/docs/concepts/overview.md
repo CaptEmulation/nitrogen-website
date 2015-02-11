@@ -4,7 +4,7 @@ title: Nitrogen Overview
 
 ## Overview
 
-Nitrogen connects devices together into applications. It provides the device management, security and permissioning, and application platform so that you can focus on building your application and not the infrastructure that surrounds it.
+Nitrogen is a backend cloud framework that allows you to connects devices together into applications. It provides the device management, security and permissioning, and application platform so that you can focus on building your application and not the infrastructure that surrounds it.
 
 ### Messaging Based
 

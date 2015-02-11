@@ -10,7 +10,7 @@ Vagrant is a tool for building complete environments. It starts by downloading a
 
 Before you get started, you'll need either [VirtualBox](https://www.virtualbox.org/) or [Parallels](http://www.parallels.com/) installed.  
 
-At present, the Vagrant scripts for Nitrogen start with a base image of Ubuntu 14.04 and starts layering the other bits on top of it. It will install Redis, Mongo, Ruby, Node.js, Grunt, Bower, Compass and all of the other prerequisites. Then it clones the repositories required from the [NitrogenJS Github](https://github.com/nitrogenjs) and 
+At present, the Vagrant scripts for Nitrogen start with a base image of Ubuntu 14.04 and starts layering the other bits on top of it. It will install Redis, Mongo, Ruby, Node.js, Grunt, Bower, Compass and all of the other prerequisites. Then it clones the repositories required from the [NitrogenJS Github](https://github.com/nitrogenjs), installs all the dependencies and then starts those services. 
 
 At the end of the script, you'll have a VM with Nitrogen up and running listening on at localhost:9000 for the web portal and at localhost:3030 for the api. 
 
@@ -40,3 +40,5 @@ For Parallels
 # create the vm
 > vagrant up --provider parallels --provision
 ```
+
+This takes a while. A while depends on your machine speed, network connection and the like but expect to go get a cup of coffee while this is running. 

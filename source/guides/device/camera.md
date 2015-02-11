@@ -4,7 +4,7 @@ title: Nitrogen Raspberry Pi Camera
 
 ## Setup Camera Application
 
-This step is nearly the same as what we did for your computer's camera in the [previous guide](../start/camera.md), which also has a walkthrough of the structure of a device application.
+This step is nearly the same as what we did for your computer's camera in the [previous guide](../start/camera.md), which also has a walk-through of the structure of a device application.
 
 Clone the camera project again from the Nitrogen project. In a shell for your Raspberry Pi run:
 
