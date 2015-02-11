@@ -16,4 +16,5 @@ The following properties are used in the body element:
 * <b>heading</b> (number): Heading in decimal degrees.
 * <b>latitude</b> (number, required): Latitude in decimal degrees.
 * <b>longitude</b> (number, required): Longitude in decimal degrees.
-* <b>speed</b> (number): Speed in meters per second.
+* <b>locationAccuracy</b> (number): Approximate bound on error of surface location in meters.
+* <b>speed</b> (number): Speed in kilometers per hour.
