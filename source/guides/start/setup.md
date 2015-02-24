@@ -28,7 +28,7 @@ Before we create a user, let's make sure that we are connected to the correct se
 
 `> n2 service show` 
 
-This will show you which service you are connected to currently. By default this is "host: api.nitrogen.io". If you want to change it, use the n2 command to 'set' individual properties or 'use' a seperate service profile all together.
+This will show you which service you are connected to currently. By default this is "host: api.nitrogen.io". If you want to change it, use the n2 command to 'set' individual properties or 'use' a separate service profile all together.
 
 `> n2 service help` for more details 
 
