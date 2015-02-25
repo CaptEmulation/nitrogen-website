@@ -2,9 +2,9 @@
 title: Command Line Interface
 ---
 
-# Command Line Interface (n2)
+# Command Line Interface
 
-n2 is the command line tool that can be used to do command line administration of a Nitrogen service. It can be used to create new users, provision devices, connect to a new service and is extremely useful in sending/receiving test messages.
+The Nitrogen project maintains a command line tool (n2, for the gas molecule of Nitrogen in our atmosphere) that can be used to do command line administration of a Nitrogen service. It can be used to create new users, provision devices, connect to a new service and sending/receiving test messages.
 
 The n2 tool takes a command and then an argument or series of arguments.
 
