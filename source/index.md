@@ -14,81 +14,88 @@ title: A platform for connecting devices and applications.
 </table>
 
 <div class="row" style="margin-top: 20px">
-    Nitrogen is a cloud framework for the Internet of Things (IoT). The backend is all written in Node.js. Device side, there is an agent written in Node.js but you can use Rest or MQTT and skip the agent completely. 
+    Nitrogen is a cloud framework for the Internet of Things (IoT). The backend is all written in Node.js. Device side, there is an agent written in Node.js but you can use Rest or MQTT and skip the agent completely.
 </div>
 
 <div class="row" style="margin-top: 20px">
-There are three possible places to get started depending on what you want to do first. 
+There are three possible places to get started depending on what you want to do first.
 </div>
 
 <div class="row" style="margin-top: 20px">
     <div class="col-md-4">
-        <h3><a href="./guides/device/index.html">Device side development</a></h3>
-        <p>
-            Connect devices over a variety of protocols including REST and MQTT to Nitrogen or run the Node.js agent. 
-        </p>
-        <p>
-            <ul>
-                <li>Virtual Devices</li>
-                <li>Raspberry PI</li>
-                <li>Arduino Yun</li>
-            </ul>
+        <h3>Secure</h3>
+        <p style="font-size: 120%">
+            Nitrogen provides identity, discovery, authentication, and authorization services for your devices and application via its <a href="http://github.com/nitrogen/registry">Device Registry</a>.
         </p>
     </div>
 
     <div class="col-md-4">
-        <h3><a href="./guides/serverside/index.html">Server side development</a></h3>
-        <p>
-            Build applications with a common cloud and device application model centered on JavaScript.
-            <uL>
-                <li>Device Registry</li>
-                <li>Ingestion</li>
-                <li>Message Routing</li>
-                <li>Consumption</li>
-            </uL>
+        <h3>Messaging</h3>
+        <p style="font-size: 120%">
+            Send and process messages at scale using Nitrogen's <a href="http://github.com/nitrogen/ingestion">Ingestion</a> and <a href="http://github.com/nitrogen/consumption">Consumption</a> servers.
         </p>
     </div>
 
     <div class="col-md-4">
-        <h3><a href="./guides/devops">Dev Ops</a></h3>
-        If you want to get the Nitrogen server up and running, you'll need to look at the dev ops section. 
-        <p>
-            <ul>
-                <li>Local VM for development with Vagrant</li>
-                <li>Running the services by hand</li>
-                <li>Deployment in production using Docker</li>
-            </ul>
+        <h3>Applications</h3>
+        <p style="font-size: 120%">
+            Quickly build applications using JavaScript and Cordova using Nitrogen's <a href="http://github.com/nitrogen/oxide">Oxide</a> application seed.
         </p>
     </div>
 </div>
 
-<div>
-Nitrogen is up in Github at [NitrogenJS](http://github.com/nitrogenjs) and housed in a number of repositories. 
+<div class="row" style="margin-top: 20px">
+    <div class="col-md-4">
+        <h3>Any Device</h3>
+        <p style="font-size: 120%">
+            Nitrogen supports connecting devices via MQTT or using our node.js <a href="http://github.com/nitrogen/client">client library</a>.
+        </p>
+    </div>
 
-Server side main projects
-<ol>
-<li><a href="http://github.com/nitrogenjs/frontdoor">frontdoor</a>: Service front end for Nitrogen</li>
-<li><a href="http://github.com/nitrogenjs/ingest">ingest</a>: Ingest services for Nitrogen</li>
-<li><a href="http://github.com/nitrogenjs/registry">registry</a>: Registry services for Nitrogen</li>
-<li><a href="http://github.com/nitrogenjs/consumption">consumption</a>: Egress services for Nitrogen</li>
-<li><a href="https://github.com/nitrogenjs/admin">admin</a>: Web admin tool for working with the Nitrogen service.</li>
-</ol>
-Client side main projects
-
-<ol>
-<li><a href="https://github.com/nitrogenjs/client">client</a>: JavaScript client library for building Nitrogen devices and applications.</li>
-<li><a href="https://github.com/nitrogenjs/cli">cli</a>: Command line interface for working with the Nitrogen service.</li>
-</ol>
+    <div class="col-md-4">
+        <h3>Open</h3>
+        <p style="font-size: 120%">
+            Use the pub sub, scaled message hub, blob storage, and/or archival storage of the infrastructure you've chosen via Nitrogen's <a href="http://github.com/nitrogen/providers">provider plug-in</a> model.
+        </p>
+    </div>
 
 
-Helpers
-<ol>
-<li><a href="https://github.com/nitrogenjs/service">service</a>: Core platform responsible for managing principals, security, and messaging.</li>
-<li><a href="https://github.com/nitrogenjs/devices">devices</a>: Device principals for common pieces of hardware.</li>
-<li><a href="https://github.com/nitrogenjs/commands">commands</a>: CommandManagers and schemas for well known command types.</li>
-<li><a href="https://github.com/nitrogenjs/reactor">reactor</a>: Always-on hosted application execution platform.</li>
-<li><a href="https://github.com/nitrogenjs/apps">apps</a>: Project maintained Nitrogen applications.</li>
-</ol>
+    <div class="col-md-4">
+        <h3>Ready to Deploy</h3>
+        <p style="font-size: 120%">
+            Nitrogen has a full set of <a href="http://github.com/nitrogen/devops">devops tooling</a> for deploying both development and scaled server environments.
+        </p>
+    </div>
+
 </div>
+
+<h3>Applications</h3>
+
+<p style="font-size: 120%">
+   An application that controls a heater using the measurements of four thermometers could be implemented like this using the JavaScript SDK:
+</p>
+
+```javascript
+var temperatures = {};
+var SETPOINT = 21.0;
+var lastCommand;
+
+session.onMessage({ type: 'temperature' }, function(message) {
+    temperatures[message.from.id] = message.body.temperature;
+
+    var avg = avgTemperature(temperatures);
+
+    if (avg < SETPOINT) {
+        lastCommand = new nitrogen.Message({
+            type: 'switchCommand',
+            to: heater.id,
+            body: {
+                on: true
+            }
+        }.send(session));
+    }
+
+});
+```
 
 <a href="/docs/concepts/overview.html" class="btn green"  style="margin-top: 10px">Learn More</a>
