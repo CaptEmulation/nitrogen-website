@@ -15,31 +15,56 @@ title: A platform for connecting devices and applications.
 
 <div class="row" style="margin-top: 20px">
     <div class="col-md-4">
-        <h3>Manage devices</h3>
-        <p style="font-size: 120%">
-            Provision, monitor, install applications, control, and send / receive data over reliable messaging.
-        </p>
-    </div>
-
-    <div class="col-md-4">
-        <h3>Application Platform</h3>
-        <p style="font-size: 120%">
-            Build applications with a common cloud and device application model centered on JavaScript.
-        </p>
-    </div>
-
-    <div class="col-md-4">
         <h3>Secure</h3>
         <p style="font-size: 120%">
-            Nitrogen's authentication and authorization system keeps your devices, users, and data safe.
+            Nitrogen provides identity, discovery, authentication, and authorization services for your devices and application via its <a href="http://github.com/nitrogen/registry">Device Registry</a>.
         </p>
     </div>
+
+    <div class="col-md-4">
+        <h3>Messaging</h3>
+        <p style="font-size: 120%">
+            Send and process messages at scale using Nitrogen's <a href="http://github.com/nitrogen/ingestion">Ingestion</a> and <a href="http://github.com/nitrogen/consumption">Consumption</a> servers.
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <h3>Applications</h3>
+        <p style="font-size: 120%">
+            Quickly build applications using JavaScript and Cordova using Nitrogen's <a href="http://github.com/nitrogen/oxide">Oxide</a> application seed.
+        </p>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 20px">
+    <div class="col-md-4">
+        <h3>Any Device</h3>
+        <p style="font-size: 120%">
+            Nitrogen supports connecting devices via MQTT or using our node.js <a href="http://github.com/nitrogen/client">client library</a>.
+        </p>
+    </div>
+
+    <div class="col-md-4">
+        <h3>Open</h3>
+        <p style="font-size: 120%">
+            Use the pub sub, scaled message hub, blob storage, and/or archival storage of the infrastructure you've chosen via Nitrogen's <a href="http://github.com/nitrogen/providers">provider plug-in</a> model.
+        </p>
+    </div>
+
+
+    <div class="col-md-4">
+        <h3>Ready to Deploy</h3>
+        <p style="font-size: 120%">
+            Nitrogen has a full set of <a href="http://github.com/nitrogen/devops">devops tooling</a> for deploying both development and scaled server environments.
+        </p>
+    </div>
+
 </div>
 
 <h3>Applications</h3>
 
 <p style="font-size: 120%">
-   An application that controls a heater using the measurements of four thermometers looks like this:
+   An application that controls a heater using the measurements of four thermometers could be implemented like this using the JavaScript SDK:
 </p>
 
 ```javascript
@@ -63,22 +88,6 @@ session.onMessage({ type: 'temperature' }, function(message) {
     }
 
 });
-```
-
-<p style="font-size: 120%">
-    Making an application installable on a device is as simple as using node.js's package manager to publish it:
-</p>
-
-```javascript
-> npm publish
-```
-
-<p style="font-size: 120%">
-    and installing it on a device is as simple as:
-</p>
-
-```javascript
-> n2 app install 'Raspberry Pi' heating-control
 ```
 
 <a href="/docs/concepts/overview.html" class="btn green"  style="margin-top: 10px">Learn More</a>
