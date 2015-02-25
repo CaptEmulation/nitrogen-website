@@ -48,7 +48,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         <a href="/">About</a>
       </li>
       <li id="guidesNavbar">
-      <a href="/guides/start/setup.html">Guides</a>
+      <a href="/guides/temperature/setup.html">Guides</a>
       </li>
       <li id="docsNavbar">
         <a href="/docs/concepts/overview.html">Documentation</a>
@@ -236,18 +236,26 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
         }
     } else if (window.location.pathname.substring(0, 7) === '/guides') {
         $('#guidesNavbar').addClass('active');
-        if (window.location.pathname.substring(0, 13) === '/guides/start') {
-            $('#startTree').addClass('active');
-            $('#startSelected').addClass('selected');
-            $('#startArrow').addClass('arrow').addClass('open');
-        } else if (window.location.pathname.substring(0, 14) === '/guides/device') {
-            $('#deviceTree').addClass('active');
-            $('#deviceSelected').addClass('selected');
-            $('#deviceArrow').addClass('arrow').addClass('open');
+        if (window.location.pathname.substring(0, 19) === '/guides/temperature') {
+            $('#temperatureTree').addClass('active');
+            $('#temperatureSelected').addClass('selected');
+            $('#temperatureArrow').addClass('arrow').addClass('open');
+        } else if (window.location.pathname.substring(0, 13) === '/guides/light') {
+            $('#lightTree').addClass('active');
+            $('#lightSelected').addClass('selected');
+            $('#lightArrow').addClass('arrow').addClass('open');
+        } else if (window.location.pathname.substring(0, 14) === '/guides/camera') {
+            $('#cameraTree').addClass('active');
+            $('#cameraSelected').addClass('selected');
+            $('#cameraArrow').addClass('arrow').addClass('open');
         } else if (window.location.pathname.substring(0, 12) === '/guides/apps') {
             $('#appsTree').addClass('active');
             $('#appsSelected').addClass('selected');
             $('#appsArrow').addClass('arrow').addClass('open');
+        } else if (window.location.pathname.substring(0, 14) === '/guides/device') {
+            $('#deviceTree').addClass('active');
+            $('#deviceSelected').addClass('selected');
+            $('#deviceArrow').addClass('arrow').addClass('open');
         }
     } else {
         $('#aboutNavbar').addClass('active');

@@ -44,4 +44,4 @@ In the real world, devices can live in very unaccessible locations where it migh
 
 And that's it. We've successfully built a device, hooked it up to a Nitrogen service, and controlled it remotely. We could have done this anywhere in the world, on any network, and the Nitrogen service would have routed these messages back to our camera. And all of the potentially sensitive data this camera is collecting is only accessible to you because of the permissions that the Nitrogen service enforces.
 
-The next guide will walk you through building your [first hardware camera using a Raspberry Pi](/guides/device/setup.html)
+The next guide will walk you through building your [first hardware camera using a Raspberry Pi](/guides/device/camera.html)

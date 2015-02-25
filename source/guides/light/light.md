@@ -4,7 +4,7 @@ title: Writing your first device
 
 ## Writing your first device
 
-Now that you've [setup Nitrogen](/guides/start/setup.html), it's time to start writing some code. We're going to work against the public gateway but with just a configuration change, you can run the same device against your own instance of Nitrogen.
+Now that you've [setup Nitrogen](/guides/temperature/setup.html) and [built a virtual thermometer](/guides/temperature/thermometer.html), it's time to start writing some code. We're going to work against the hosted version of Nitrogen but with just a configuration change, you can run the same device against your own instance of Nitrogen.
 
 This "device" is a node.js application that can run anywhere that node.js can run. For this exercise we'll be running it from the command line but you can run this same code on an Arduino Yun or a Raspberry Pi.
 
@@ -20,7 +20,7 @@ Change to that directory:
 
 ### Setting up the NPM packages
 
-There are 2 NPM packages that we need. The first is the LevelDB based Nitrogen store. This is the library that handles storing your credentials and remembering who this device is for the next time that you connect to the service. The second is the Nitrogen client library that we'll use to interact with the Nitrogen service.
+There are 2 NPM packages that we need. The first is the file based Nitrogen store. This is the library that handles storing your credentials and remembering who this device is for the next time that you connect to the service. The second is the Nitrogen client library that we'll use to interact with the Nitrogen service.
 
 We'll install these via NPM. To do this, we'll need a package.json.
 
@@ -38,8 +38,8 @@ Fill out the package.json as follows.
   "version": "0.1.0",
   "private": "true",
   "dependencies": {
-    "nitrogen": "~0.2.0",
-    "nitrogen-leveldb-store": "~0.1.201"
+    "nitrogen": "^0.2.0",
+    "nitrogen-file-store": "^0.2.0"
   },
   "devDependencies": {
     "mocha": "1.x"
@@ -60,7 +60,7 @@ Now we're ready to write some code. Create a file in your favorite text editor a
 First let's 'require' all of the modules we are going to use. This is the equivalent of includes or references in many other programming languages.
 
 ```
-var Store = require('nitrogen-leveldb-store'),
+var Store = require('nitrogen-file-store'),
     nitrogen = require('nitrogen');
 ```
 
@@ -325,3 +325,5 @@ Now switch to separate terminal/node.js command prompt and run this n2 command r
 Now you can either run the `> n2 message ls` command or log into the admin portal and see your new messages being passed back and forth.
 
 With this guide you've built the simplest full round trip device. In a more real scenario, we'd break this up into separate libraries and separate out the configuration. Let us know about any issues or improvements by filing bugs on this and any other part of the documentation in the [website github repository](https://github.com/nitrogenjs/website).
+
+
