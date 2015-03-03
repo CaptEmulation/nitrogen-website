@@ -25,21 +25,21 @@ There are three possible places to get started depending on what you want to do 
     <div class="col-md-4">
         <h3>Secure</h3>
         <p style="font-size: 120%">
-            Nitrogen provides identity, discovery, authentication, and authorization services for your devices and application via its <a href="http://github.com/nitrogen/registry">Device Registry</a>.
+            Nitrogen provides identity, discovery, authentication, and authorization services for your devices and application via its <a href="http://github.com/nitrogenjs/registry">Device Registry</a>.
         </p>
     </div>
 
     <div class="col-md-4">
         <h3>Messaging</h3>
         <p style="font-size: 120%">
-            Send and process messages at scale using Nitrogen's <a href="http://github.com/nitrogen/ingestion">Ingestion</a> and <a href="http://github.com/nitrogen/consumption">Consumption</a> servers.
+            Send and process messages at scale using Nitrogen's <a href="http://github.com/nitrogenjs/ingestion">Ingestion</a> and <a href="http://github.com/nitrogenjs/consumption">Consumption</a> servers.
         </p>
     </div>
 
     <div class="col-md-4">
         <h3>Applications</h3>
         <p style="font-size: 120%">
-            Quickly build applications using JavaScript and Cordova using Nitrogen's <a href="http://github.com/nitrogen/oxide">Oxide</a> application seed.
+            Quickly build applications using JavaScript and Cordova using Nitrogen's <a href="http://github.com/nitrogenjs/oxide">Oxide</a> application seed.
         </p>
     </div>
 </div>
@@ -48,14 +48,14 @@ There are three possible places to get started depending on what you want to do 
     <div class="col-md-4">
         <h3>Any Device</h3>
         <p style="font-size: 120%">
-            Nitrogen supports connecting devices via MQTT or using our node.js <a href="http://github.com/nitrogen/client">client library</a>.
+            Nitrogen supports connecting devices via MQTT or using our node.js <a href="http://github.com/nitrogenjs/client">client library</a>.
         </p>
     </div>
 
     <div class="col-md-4">
         <h3>Open</h3>
         <p style="font-size: 120%">
-            Use the pub sub, scaled message hub, blob storage, and/or archival storage of the infrastructure you've chosen via Nitrogen's <a href="http://github.com/nitrogen/providers">provider plug-in</a> model.
+            Use the pub sub, scaled message hub, blob storage, and/or archival storage of the infrastructure you've chosen via Nitrogen's <a href="http://github.com/nitrogenjs/providers">provider plug-in</a> model.
         </p>
     </div>
 
@@ -63,7 +63,7 @@ There are three possible places to get started depending on what you want to do 
     <div class="col-md-4">
         <h3>Ready to Deploy</h3>
         <p style="font-size: 120%">
-            Nitrogen has a full set of <a href="http://github.com/nitrogen/devops">devops tooling</a> for deploying both development and scaled server environments.
+            Nitrogen has a full set of <a href="http://github.com/nitrogenjs/devops">devops tooling</a> for deploying both development and scaled server environments.
         </p>
     </div>
 
