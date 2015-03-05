@@ -15,7 +15,7 @@ There's a lot of reasons to run the server manually but most of them have to do 
 	> git clone https://github.com/nitrogenjs/registry.git
 	> git clone https://github.com/nitrogenjs/frontdoor.git
 	> git clone https://github.com/nitrogenjs/consumption.git
-	> git clone https://github.com/nitrogenjs/ingest.git
+	> git clone https://github.com/nitrogenjs/ingestion.git
 	```
 
 5. Use NPM in each of the created directories to install the dependencies for the services
