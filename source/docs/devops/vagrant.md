@@ -18,7 +18,7 @@ Prior to running the steps below, make sure to have VirtualBox installed.
 
 ```
 # Clone the rep
-> git clone https://github.com/ivanjudson/vagrant-vms.git
+> git clone https://github.com/irjudson/vagrant-vms.git
 # Get into the code
 > cd vagrant-vms/nitrogen
 ```
