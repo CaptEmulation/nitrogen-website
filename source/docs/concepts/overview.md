@@ -4,7 +4,7 @@ title: Nitrogen Overview
 
 ## Overview
 
-Nitrogen is a backend cloud framework that allows you to connects devices together into applications. It provides the device management, security and permissioning, and application platform so that you can focus on building your application and not the infrastructure that surrounds it.
+Nitrogen is a framework that does all of the heavy lifting for you when you want to connect devices together into applications. It provides the device management, security and permissioning, and application platform so that you can focus on building your application and not the infrastructure that surrounds it.
 
 ### Messaging Based
 
@@ -12,7 +12,7 @@ The reality of real world devices is that most are often intermittently connecte
 
 Nitrogen is [built around messaging](messages.html) to overcome this, enabling devices to send and receive messages when they are connected, and nearly everything in Nitrogen revolves around this concept.
 
-Messaging also provides abstraction. Messages in Nitrogen follow well known schemas, which enables devices and applications to communicate with each other without having to know the details of the other's implementation.
+Messaging also provides abstraction. Messages in Nitrogen can follow well known schemas, which enables devices and applications to communicate with each other without having to know the details of the other's implementation.
 
 ### Authorization and Authentication
 
