@@ -14,14 +14,6 @@ title: A platform for connecting devices and applications.
 </table>
 
 <div class="row" style="margin-top: 20px">
-    Nitrogen is a cloud framework for the Internet of Things (IoT). The backend is all written in Node.js. Device side, there is an agent written in Node.js but you can use Rest or MQTT and skip the agent completely.
-</div>
-
-<div class="row" style="margin-top: 20px">
-There are three possible places to get started depending on what you want to do first.
-</div>
-
-<div class="row" style="margin-top: 20px">
     <div class="col-md-4">
         <h3>Secure</h3>
         <p style="font-size: 120%">
