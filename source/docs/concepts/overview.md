@@ -28,6 +28,6 @@ Nitrogen includes a [JavaScript client library](/docs/nitrogen/index.html) for b
 
 ### Getting Started
 
-This section has a rich set of documentation around the core concepts of how everything fits together in Nitrogen but the best way to get started is to [build something](/guides/start/setup.html).  The project has a [set of guides](/guides/start/setup.html) to help you with that but don’t hesitate to reach out if you [need help or have feedback on the platform](mailto:timfpark@gmail.com).
+This section has a rich set of documentation around the core concepts of how everything fits together in Nitrogen but the best way to get started is to [build something](/guides/temperature/setup.html).  The project has a [set of guides](/guides/temperature/setup.html) to help you with that but don’t hesitate to reach out if you [need help or have feedback on the platform](mailto:timfpark@gmail.com).
 
-<a href="/guides/start/setup.html" class="btn green"  style="margin-top: 10px">Get Started</a>
+<a href="/guides/temperature/setup.html" class="btn green"  style="margin-top: 10px">Get Started</a>
