@@ -6,7 +6,7 @@ title: Camera Device with Nitrogen
 
 To avoid the complexities around actual hardware for the moment, we're going to build a device around something that we all have: a camera on our laptop.
 
-The first step is to clone a repo from the Nitrogen project and walk through the code and make some edits. From within a development directory on your machine, clone the camera project from the Nitrogen GitHub repo:
+Let's first clone a repo from the Nitrogen project and walk through the code and make some edits. From within a development directory on your machine, clone the camera project from the Nitrogen GitHub repo:
 
 `> git clone https://github.com/nitrogenjs/camera camera`
 
@@ -67,7 +67,7 @@ new CameraManager(camera).start(session, function(err, message) {
 });
 ```
 
-In Nitrogen, users, devices, and applications communicate with each other over messaging. There is a class of messages called [commands](/docs/concepts/commands.html) that control the operation of a device. Principals, if they have the permission to do so, can send messages to devices to ask that an operation is performed. Devices watch their stream of messages, take appropriate action(s) in response to commands, and send messages in response.
+In Nitrogen, users, devices, and applications communicate with each other over messaging. There is a class of messages called [commands](/docs/concepts/commands.html) that control the operation of a device. [Principals](/docs/concepts/principals.html), if they have the permission to do so, can send messages to devices to ask that an operation is performed. Devices watch their stream of messages, take appropriate action(s) in response to commands, and send messages in response.
 
 Because watching these message streams is a common operation, the client library defines a [commandManager](/docs/nitrogen/commandManager.html) class that provides the base functionality that can you can extend. For this device, we are using the [CameraManager](/docs/managers/cameraManager.html) subclass that knows how to control the camera device given a message stream that contains cameraCommands. Behind the scenes, the [CameraManager](/docs/managers/cameraManager.html) opens a message subscription to receive these messages in real time.
 
