@@ -6,9 +6,9 @@ title: First Thermometer with Nitrogen
 
 We created an account with the Nitrogen command line tool in the [previous guide](setup.html). Let's now get our first device connected.
 
-For this guide, we are going to skip the actual complexities around actual hardware for the moment and use simulated values for thermometer.
+For this guide, we are going to skip the complexities around actual hardware for the moment and use simulated values for thermometer.
 
-The first step is to clone a repo from the Nitrogen project and walk through the code and make some edits. From within a development directory on your machine, clone the camera project from the Nitrogen GitHub repo:
+Let's first clone a repo from the Nitrogen project and walk through the code and make some edits. From within a development directory on your machine, clone the camera project from the Nitrogen GitHub repo:
 
 `> git clone https://github.com/nitrogenjs/thermometer thermometer`
 
@@ -20,7 +20,7 @@ The thermometer project you just cloned is an example of what a standalone devic
 var service = new nitrogen.Service(config);
 ```
 
-The first thing we do is define the service that we want our device to connect to. A [service](/docs/concepts/service.html) in Nitrogen connects authenticated [principals](/docs/concepts/principals.html) (devices, users, applications, etc.) together over [messaging](/docs/concepts/messages.html) where access to and visibility of any principal is controlled by the [permissions](/docs/concepts/permissions.html) you have defined for each principal. You don't need to understand the all of the details of that sentence for this guide -- but there is more detail in these links when you want to.
+This first line defines the service to which we want our device to connect. A [service](/docs/concepts/service.html) in Nitrogen connects authenticated [principals](/docs/concepts/principals.html) (devices, users, applications, etc.) together over [messaging](/docs/concepts/messages.html) where access to and visibility of any principal and its message stream is controlled by the [permissions](/docs/concepts/permissions.html) you have defined for each principal. You don't need to understand the all of the details of that sentence for this guide -- but there is more detail in these links when you want to.
 
 The next few lines connects the thermometer to the Nitrogen service:
 
