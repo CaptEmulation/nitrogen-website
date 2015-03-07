@@ -20,11 +20,11 @@ The real world devices in our lives and our workplaces are in many ways even mor
 
 At the same time, security is difficult to implement and even harder to get right. The [Nitrogen service](service.html) provides authentication and authorization for both devices and users out of the box. Nitrogen uses these [security principals](principals.html) throughout the platform in combination with an [ACL based permissions system](permissions.html) to authorize actions whether its sending [command messages](commands.html) to a device or the ability to subscribe to a particular device’s message stream.
 
-### Application Environment
-
+### Device and Web Applications
+<!--
 Finally, Nitrogen provides an application environment called [Reactor](reactor.html) that hosts and manages the lifecycle of applications that tie together devices. Applications in Nitrogen are node.js modules that can leverage the broad JavaScript developer base, the rich node.js package ecosystem, and the ability to publish and update them easily.
-
-Applications in Nitrogen primarily work with the Nitrogen service with a [JavaScript client library](/docs/nitrogen/index.html).
+-->
+Nitrogen includes a [JavaScript client library](/docs/nitrogen/index.html) for building both device and web based applications.
 
 ### Getting Started
 
