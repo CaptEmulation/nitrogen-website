@@ -12,7 +12,7 @@ This overview gives you an overview of the three options and how to choose betwe
 
 ### Manual setup of a server
 
-This is the best option if you are doing back end Nitrogen development as it gives you the most flexibility and you can run everything on your own local machine. If this fits your usage profile, you can find more details in the [manual Nitrogen Server](manual.html) section.
+This is the best option if you are doing back end Nitrogen development as it gives you the most flexibility and you can run everything on your own local machine. If this fits your usage profile, you can find more details in the [manual Nitrogen Server](manually.html) section.
 
 ### Running Vagrant
 
